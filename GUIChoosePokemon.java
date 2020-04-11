@@ -22,10 +22,10 @@ public class GUIChoosePokemon extends JFrame{
     private Mons1  SQT = getPokemons.getSQT();
     private Mons1  PKC = getPokemons.getPKC();
     
-    private Base /*novice*/ BS = new Base(BBS.getJName(), BBS.getJSkill(),14,130,0,0,0,0,0);
-    private Base /*novice*/ MD = new Base(CMD.getJName(), CMD.getJSkill(),15,145,0,0,0,0,0);
-    private Base /*novice*/ QT = new Base(SQT.getJName(), SQT.getJSkill(),10,140,0,0,0,0,0);
-    private Base /*novice*/ KC = new Base(PKC.getJName(), PKC.getJSkill(),13,150,0,0,0,0,0);
+    private Base /*novice*/ BS = new Base(BBS.getJName(), BBS.getJSkill(),14,130,0,0,0,0,0,0);
+    private Base /*novice*/ MD = new Base(CMD.getJName(), CMD.getJSkill(),15,145,0,0,0,0,0,0);
+    private Base /*novice*/ QT = new Base(SQT.getJName(), SQT.getJSkill(),10,140,0,0,0,0,0,0);
+    private Base /*novice*/ KC = new Base(PKC.getJName(), PKC.getJSkill(),13,150,0,0,0,0,0,0);
     
     private int checkPokemon = 0;
     
@@ -35,11 +35,11 @@ public class GUIChoosePokemon extends JFrame{
         c.setLayout(new BorderLayout());
         add(c);
         
-        ImageIcon bs = new ImageIcon("bbs.png");
-        ImageIcon md = new ImageIcon("cmd.png");
-        ImageIcon qt = new ImageIcon("sqt.png");
-        ImageIcon kc = new ImageIcon("pkc.png");
-        ImageIcon pogo = new ImageIcon("icon2.png");
+        ImageIcon bs = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\bbs1.GIF");
+        ImageIcon md = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\cmd1.GIF");
+        ImageIcon qt = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\sqt1.GIF");
+        ImageIcon kc = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\pkc1.GIF");
+        ImageIcon pogo = new ImageIcon("img/icon2.png");
         
         JLabel title = new JLabel("CHOOSE YOUR BUDDY",JLabel.CENTER);
         title.setFont(new Font("Algerian", Font.BOLD, 22));
@@ -52,8 +52,9 @@ public class GUIChoosePokemon extends JFrame{
         JLabel pic;
         pic = new JLabel("", bs,JLabel.CENTER);
         c.add(pic,BorderLayout.WEST);
+        
         JPanel c1 = new JPanel();
-        c1.setLayout(new GridLayout(4,1));
+        c1.setLayout(new GridLayout(8,2));
         
         JLabel value = new JLabel("Pokemon : " + BS.getName(), JLabel.LEFT);
         value.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
@@ -74,6 +75,7 @@ public class GUIChoosePokemon extends JFrame{
         
         c.add(c1,BorderLayout.CENTER);
         JPanel c2 = new JPanel();
+        
         c2.setLayout(new GridLayout(4,1));
         JButton buttonBBS = new JButton("Bulbasaur");
         buttonBBS.setFont(new Font("Cambria Math", Font.BOLD, 18));
@@ -100,7 +102,7 @@ public class GUIChoosePokemon extends JFrame{
                 value2.setText("Skill : " + BS.getBaseSkill());
                 //inf3.setText("Weapon  "+NV.getWeapon());
                 value3.setText("Damage : " + BS.getDamage());
-                pic.setIcon(new ImageIcon("bbs.png"));
+                pic.setIcon(new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\bbs1.GIF"));
                 checkPokemon = 0;
                 
  
@@ -114,7 +116,7 @@ public class GUIChoosePokemon extends JFrame{
                 value2.setText("Skill : " + MD.getBaseSkill());
                 //inf3.setText("Weapon  "+NV.getWeapon());
                 value3.setText("Damage : " + MD.getDamage());
-                pic.setIcon(new ImageIcon("cmd.png"));
+                pic.setIcon(new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\cmd1.GIF"));
                 checkPokemon = 1;
                 
  
@@ -128,7 +130,7 @@ public class GUIChoosePokemon extends JFrame{
                 value2.setText("Skill : " + QT.getBaseSkill());
                 //inf3.setText("Weapon  "+NV.getWeapon());
                 value3.setText("Damage : " + QT.getDamage());
-                pic.setIcon(new ImageIcon("sqt.png"));
+                pic.setIcon(new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\sqt1.GIF"));
                 checkPokemon = 2;
                 
  
@@ -142,7 +144,7 @@ public class GUIChoosePokemon extends JFrame{
                 value2.setText("Skill : " + KC.getBaseSkill());
                 //inf3.setText("Weapon  "+NV.getWeapon());
                 value3.setText("Damage : " + KC.getDamage());
-                pic.setIcon(new ImageIcon("pkc.png"));
+                pic.setIcon(new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\pkc1.GIF"));
                 checkPokemon = 3;
                 
  
@@ -153,24 +155,24 @@ public class GUIChoosePokemon extends JFrame{
             public void actionPerformed(ActionEvent epy){
                 if(checkPokemon == 0){
                     setVisible(false);
-                    new GUIBattleground(BS, bag);
+                    //new GUIBattleground(BS, bag);
                     
                 }
                 else if(checkPokemon ==1){
                     setVisible(false);
-                    new GUIBattleground(MD, bag);
+                    //new GUIBattleground(MD, bag);
                     
                 }
                 
                 else if(checkPokemon ==2){
                     setVisible(false);
-                    new GUIBattleground(QT, bag);
+                   // new GUIBattleground(QT, bag);
                     
                 }
                 
                 else if(checkPokemon ==3){
                     setVisible(false);
-                    new GUIBattleground(KC, bag);
+                  //  new GUIBattleground(KC, bag);
                     
                 }
                 
@@ -183,4 +185,4 @@ public class GUIChoosePokemon extends JFrame{
         setVisible(true);  
     }    
     }  
-}
+
