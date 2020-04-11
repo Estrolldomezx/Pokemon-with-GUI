@@ -22,10 +22,10 @@ public class GUIChoosePokemon extends JFrame{
     private Mons1  SQT = getPokemons.getSQT();
     private Mons1  PKC = getPokemons.getPKC();
     
-    private Base /*novice*/ BS = new Base(BBS.getJName(), BBS.getSkill(),14,130,0,0,0,0,0,0);
-    private Base /*novice*/ MD = new Base(CMD.getJName(), CMD.getSkill(),15,145,0,0,0,0,0,0);
-    private Base /*novice*/ QT = new Base(SQT.getJName(), SQT.getSkill(),10,140,0,0,0,0,0,0);
-    private Base /*novice*/ KC = new Base(PKC.getJName(), PKC.getSkill(),13,150,0,0,0,0,0,0);
+    private Base /*novice*/ BS = new Base(BBS.getJName(), BBS.getJSkill(),14,130,0,0,0,0,0);
+    private Base /*novice*/ MD = new Base(CMD.getJName(), CMD.getJSkill(),15,145,0,0,0,0,0);
+    private Base /*novice*/ QT = new Base(SQT.getJName(), SQT.getJSkill(),10,140,0,0,0,0,0);
+    private Base /*novice*/ KC = new Base(PKC.getJName(), PKC.getJSkill(),13,150,0,0,0,0,0);
     
     private int checkPokemon = 0;
     
@@ -35,10 +35,10 @@ public class GUIChoosePokemon extends JFrame{
         c.setLayout(new BorderLayout());
         add(c);
         
-        ImageIcon BS = new ImageIcon("bbs.png");
-        ImageIcon MD = new ImageIcon("cmd.png");
-        ImageIcon QT = new ImageIcon("sqt.png");
-        ImageIcon KC = new ImageIcon("pkc.png");
+        ImageIcon bs = new ImageIcon("bbs.png");
+        ImageIcon md = new ImageIcon("cmd.png");
+        ImageIcon qt = new ImageIcon("sqt.png");
+        ImageIcon kc = new ImageIcon("pkc.png");
         ImageIcon pogo = new ImageIcon("icon2.png");
         
         JLabel title = new JLabel("CHOOSE YOUR BUDDY",JLabel.CENTER);
@@ -59,7 +59,7 @@ public class GUIChoosePokemon extends JFrame{
         value.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
         JLabel value1 = new JLabel("HP :  "+ BS.getHP(), JLabel.LEFT); //Cambria Math
         value1.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
-        JLabel value2 = new JLabel("Skill : " + BS.getBasicSkill(), JLabel.LEFT);
+        JLabel value2 = new JLabel("Skill : " + BS.getBaseSkill(), JLabel.LEFT);
         value2.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
         JLabel value3 = new JLabel("Damage: " + BS.getDamage(), JLabel.LEFT);
         value3.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
@@ -85,6 +85,11 @@ public class GUIChoosePokemon extends JFrame{
         buttonPKC.setFont(new Font("Cambria Math", Font.BOLD, 18));
         /*JButton bttf = new JButton("THEIF");
         bttf.setFont(new Font("Cambria Math", Font.BOLD, 18));*/
+        c2.add(buttonBBS);
+        c2.add(buttonCMD);
+        c2.add(buttonSQT);
+        c2.add(buttonPKC);
+        
         
         c.add(c2,BorderLayout.EAST);
         
@@ -106,7 +111,7 @@ public class GUIChoosePokemon extends JFrame{
             public void actionPerformed(ActionEvent env){
                 value.setText("Name : " + MD.getName());
                 value1.setText("HP : " + MD.getHP());
-                value2.setText("Skill : " + MD.getBasicSkill());
+                value2.setText("Skill : " + MD.getBaseSkill());
                 //inf3.setText("Weapon  "+NV.getWeapon());
                 value3.setText("Damage : " + MD.getDamage());
                 pic.setIcon(new ImageIcon("cmd.png"));
@@ -120,7 +125,7 @@ public class GUIChoosePokemon extends JFrame{
             public void actionPerformed(ActionEvent env){
                 value.setText("Name : " + QT.getName());
                 value1.setText("HP : " + QT.getHP());
-                value2.setText("Skill : " + QT.getBasicSkill());
+                value2.setText("Skill : " + QT.getBaseSkill());
                 //inf3.setText("Weapon  "+NV.getWeapon());
                 value3.setText("Damage : " + QT.getDamage());
                 pic.setIcon(new ImageIcon("sqt.png"));
@@ -134,7 +139,7 @@ public class GUIChoosePokemon extends JFrame{
             public void actionPerformed(ActionEvent env){
                 value.setText("Name : " + KC.getName());
                 value1.setText("HP : " + KC.getHP());
-                value2.setText("Skill : " + KC.getBasicSkill());
+                value2.setText("Skill : " + KC.getBaseSkill());
                 //inf3.setText("Weapon  "+NV.getWeapon());
                 value3.setText("Damage : " + KC.getDamage());
                 pic.setIcon(new ImageIcon("pkc.png"));
