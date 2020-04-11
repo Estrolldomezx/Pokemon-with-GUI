@@ -21,7 +21,7 @@ public class Base extends BasePokemon{
     private int maxEXP;
     private Bag myBag; //Nbag
     
-    public Base(String baseName, String baseSkill, int baseDamage, int baseHP, int baseEXP, int basePokeball, int baseMana, int baseDef, int baseLevel){
+    public Base(String baseName, String baseSkill, int baseDamage, int baseHP, int baseEXP, int basePokeball, int baseMana, int baseDef, int baseLevel, int BaseKilmon){
         super(baseName);
         this.charHP = baseHP;
         this.mana =baseMana;
