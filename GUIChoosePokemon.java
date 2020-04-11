@@ -15,12 +15,12 @@ import java.awt.event.*;
 
 
 public class GUIChoosePokemon extends JFrame{
-    private AllPokemons allpokemons = new AllPokemons();
+    private AllPokemons getPokemons = new AllPokemons();
     private Bag bag = new Bag();
-    private Mons1  BBS = getPokemons.Bulbasaur();
-    private Mons1  CMD = getPokemons.Charmander();
-    private Mons1  SQT = getPokemons.Squirtle();
-    private Mons1  PKC = getPokemons.Pikachu();
+    private Mons1  BBS = getPokemons.getBBS();
+    private Mons1  CMD = getPokemons.getCMD();
+    private Mons1  SQT = getPokemons.getSQT();
+    private Mons1  PKC = getPokemons.getPKC();
     
     private Base /*novice*/ BS = new Base(BBS.getJName(), BBS.getSkill(),14,130,0,0,0,0,0,0);
     private Base /*novice*/ MD = new Base(CMD.getJName(), CMD.getSkill(),15,145,0,0,0,0,0,0);
@@ -50,18 +50,18 @@ public class GUIChoosePokemon extends JFrame{
         c.add(play,BorderLayout.SOUTH);
         
         JLabel pic;
-        pic = new JLabel("",Base,JLabel.CENTER);
+        pic = new JLabel("", BS,JLabel.CENTER);
         c.add(pic,BorderLayout.WEST);
         JPanel c1 = new JPanel();
         c1.setLayout(new GridLayout(4,1));
         
-        JLabel value = new JLabel("Pokemon : " + Base.getName(),JLabel.LEFT);
+        JLabel value = new JLabel("Pokemon : " + BS.getName(), JLabel.LEFT);
         value.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
-        JLabel value1 = new JLabel("HP :  + Base.getHP(),JLabel.LEFT); //Cambria Math
+        JLabel value1 = new JLabel("HP :  "+ BS.getHP(), JLabel.LEFT); //Cambria Math
         value1.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
-        JLabel value2 = new JLabel("Skill : " + .getBasicSkill(),JLabel.LEFT);
+        JLabel value2 = new JLabel("Skill : " + BS.getBasicSkill(), JLabel.LEFT);
         value2.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
-        JLabel value3 = new JLabel("Damage: " + Base.getDamage(),JLabel.LEFT);
+        JLabel value3 = new JLabel("Damage: " + BS.getDamage(), JLabel.LEFT);
         value3.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
         //JLabel inf4 = new JLabel("Weapon: "+Base.getWeapon(),JLabel.LEFT);
         //inf4.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
@@ -90,11 +90,11 @@ public class GUIChoosePokemon extends JFrame{
         
         buttonBBS.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent env){
-                value.setText("Name : " + Base.getName());
-                value1.setText("HP : " + Base.getHP());
-                value2.setText("Skill : " + Base.getBasicSkill());
+                value.setText("Name : " + BS.getName());
+                value1.setText("HP : " + BS.getHP());
+                value2.setText("Skill : " + BS.getBaseSkill());
                 //inf3.setText("Weapon  "+NV.getWeapon());
-                value3.setText("Damage : " + Base.getDamage());
+                value3.setText("Damage : " + BS.getDamage());
                 pic.setIcon(new ImageIcon("bbs.png"));
                 checkPokemon = 0;
                 
@@ -104,11 +104,11 @@ public class GUIChoosePokemon extends JFrame{
         
         buttonCMD.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent env){
-                value.setText("Name : " + Base.getName());
-                value1.setText("HP : " + Base.getHP());
-                value2.setText("Skill : " + Base.getBasicSkill());
+                value.setText("Name : " + MD.getName());
+                value1.setText("HP : " + MD.getHP());
+                value2.setText("Skill : " + MD.getBasicSkill());
                 //inf3.setText("Weapon  "+NV.getWeapon());
-                value3.setText("Damage : " + Base.getDamage());
+                value3.setText("Damage : " + MD.getDamage());
                 pic.setIcon(new ImageIcon("cmd.png"));
                 checkPokemon = 1;
                 
@@ -118,11 +118,11 @@ public class GUIChoosePokemon extends JFrame{
         
         buttonSQT.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent env){
-                value.setText("Name : " + Base.getName());
-                value1.setText("HP : " + Base.getHP());
-                value2.setText("Skill : " + Base.getBasicSkill());
+                value.setText("Name : " + QT.getName());
+                value1.setText("HP : " + QT.getHP());
+                value2.setText("Skill : " + QT.getBasicSkill());
                 //inf3.setText("Weapon  "+NV.getWeapon());
-                value3.setText("Damage : " + Base.getDamage());
+                value3.setText("Damage : " + QT.getDamage());
                 pic.setIcon(new ImageIcon("sqt.png"));
                 checkPokemon = 2;
                 
@@ -132,11 +132,11 @@ public class GUIChoosePokemon extends JFrame{
         
         buttonPKC.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent env){
-                value.setText("Name : " + Base.getName());
-                value1.setText("HP : " + Base.getHP());
-                value2.setText("Skill : " + Base.getBasicSkill());
+                value.setText("Name : " + KC.getName());
+                value1.setText("HP : " + KC.getHP());
+                value2.setText("Skill : " + KC.getBasicSkill());
                 //inf3.setText("Weapon  "+NV.getWeapon());
-                value3.setText("Damage : " + Base.getDamage());
+                value3.setText("Damage : " + KC.getDamage());
                 pic.setIcon(new ImageIcon("pkc.png"));
                 checkPokemon = 3;
                 
@@ -175,16 +175,7 @@ public class GUIChoosePokemon extends JFrame{
         setSize(800,600);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
-        
-        
-        
-        
-    }
-
-        
-        
-    }
-
-    
+        setVisible(true);  
+    }    
+    }  
 }
