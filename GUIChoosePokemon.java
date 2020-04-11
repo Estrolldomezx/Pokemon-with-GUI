@@ -50,7 +50,7 @@ public class GUIChoosePokemon extends JFrame{
         c.add(play,BorderLayout.SOUTH);
         
         JLabel pic;
-        pic = new JLabel("", BS,JLabel.CENTER);
+        pic = new JLabel("", bs,JLabel.CENTER);
         c.add(pic,BorderLayout.WEST);
         JPanel c1 = new JPanel();
         c1.setLayout(new GridLayout(4,1));
