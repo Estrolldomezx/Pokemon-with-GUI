@@ -8,7 +8,7 @@
  *
  * @author Admin
  */
-public class Base {
+public class Base extends BasePokemon{
     private int mana;
     private int def; //armor
     private int exp;
