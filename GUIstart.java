@@ -18,10 +18,10 @@ public class GUIstart extends JFrame{
         JLabel Background;
         JButton button1 = new JButton("Click to play");
         button1.setFont(new Font("Eras Demi ITC", Font.BOLD, 20));
-        ImageIcon img = new ImageIcon("icon1.png");
+        ImageIcon img = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\icon12.JPG");
         Background = new JLabel("", img, JLabel.CENTER );
         Background.setLayout(null);
-        button1.setBounds(300,400,200,35);
+        button1.setBounds(300,475,200,35);
         Background.setBounds(0,0,800,600);
         Background.add(button1);
         add(Background);
@@ -36,5 +36,4 @@ public class GUIstart extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }
-    
 }
