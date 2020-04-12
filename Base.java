@@ -9,6 +9,8 @@
  * @author Admin
  */
 public class Base extends BasePokemon{
+
+   // private String name; //add
     private int mana;
     private int def; //armor
     private int exp;
@@ -21,9 +23,9 @@ public class Base extends BasePokemon{
     private int maxEXP;
     private Bag myBag; //Nbag
     
-    public Base(String baseName, String baseSkill, int baseDamage, int baseHP, int baseEXP, int basePokeball, int baseMana, int baseDef, int baseLevel, int BaseKilmon){
-        super(baseName);
-        this.charHP = baseHP;
+    public Base(String getName, String baseSkill, int baseDamage, int baseHP, int baseEXP, int basePokeball, int baseMana, int baseDef, int baseLevel, int baseKillmon){
+        super(getName);
+        this.CharHP = baseHP;
         this.mana =baseMana;
         this.def = baseDef;
         this.exp = baseEXP;
@@ -65,7 +67,8 @@ public class Base extends BasePokemon{
         public void getItem(Item item){
             myBag.AddItem(item);
         }
-        public boolean getLevel(){
+
+    public boolean getLevel(int maxEXP){
             if(exp == maxEXP){
                 level++;
                 return true;
@@ -76,9 +79,7 @@ public class Base extends BasePokemon{
         public void getEXP(int newEXP){
             exp += newEXP;
             getLevel();
-        }
-        
-        
+        } 
 }
         
         
