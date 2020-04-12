@@ -15,10 +15,9 @@ public class BasePokemon {
     
     public BasePokemon(String pname){
         this.pokename = pname;
-    CharHP = 0;
-    MaxCharHP = 0;
+        CharHP = 0;
+        MaxCharHP = 0;
     }
-    
     public String getName(){
         return pokename;
     }
