@@ -22,10 +22,10 @@ public class GUIChoosePokemon extends JFrame{
     private Mons1  SQT = getPokemons.getSQT();
     private Mons1  PKC = getPokemons.getPKC();
     
-    private Base /*novice*/ BS = new Base(BBS.getJName(), BBS.getJSkill(),14,130,0,0,0,0,0,0);
-    private Base /*novice*/ MD = new Base(CMD.getJName(), CMD.getJSkill(),15,145,0,0,0,0,0,0);
-    private Base /*novice*/ QT = new Base(SQT.getJName(), SQT.getJSkill(),10,140,0,0,0,0,0,0);
-    private Base /*novice*/ KC = new Base(PKC.getJName(), PKC.getJSkill(),13,150,0,0,0,0,0,0);
+    private Base  BS = new Base(BBS.getJName(), BBS.getJSkill(),14,130,0,0,0,0,0,0);
+    private Base  MD = new Base(CMD.getJName(), CMD.getJSkill(),15,145,0,0,0,0,0,0);
+    private Base  QT = new Base(SQT.getJName(), SQT.getJSkill(),10,140,0,0,0,0,0,0);
+    private Base  KC = new Base(PKC.getJName(), PKC.getJSkill(),13,150,0,0,0,0,0,0);
     
     private int checkPokemon = 0;
     
@@ -64,15 +64,10 @@ public class GUIChoosePokemon extends JFrame{
         value2.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
         JLabel value3 = new JLabel("Damage: " + BS.getDamage(), JLabel.LEFT);
         value3.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
-        //JLabel inf4 = new JLabel("Weapon: "+Base.getWeapon(),JLabel.LEFT);
-        //inf4.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
-        
         c1.add(value);
         c1.add(value1);
         c1.add(value2);
         c1.add(value3);
-        //c1.add(value4);
-        
         c.add(c1,BorderLayout.CENTER);
         JPanel c2 = new JPanel();
         
@@ -91,8 +86,7 @@ public class GUIChoosePokemon extends JFrame{
         c2.add(buttonCMD);
         c2.add(buttonSQT);
         c2.add(buttonPKC);
-        
-        
+
         c.add(c2,BorderLayout.EAST);
         
         buttonBBS.addActionListener(new ActionListener(){
@@ -104,8 +98,6 @@ public class GUIChoosePokemon extends JFrame{
                 value3.setText("Damage : " + BS.getDamage());
                 pic.setIcon(new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\bbs1.GIF"));
                 checkPokemon = 0;
-                
- 
             }
         });
         
@@ -118,8 +110,6 @@ public class GUIChoosePokemon extends JFrame{
                 value3.setText("Damage : " + MD.getDamage());
                 pic.setIcon(new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\cmd1.GIF"));
                 checkPokemon = 1;
-                
- 
             }
         });
         
@@ -132,8 +122,6 @@ public class GUIChoosePokemon extends JFrame{
                 value3.setText("Damage : " + QT.getDamage());
                 pic.setIcon(new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\sqt1.GIF"));
                 checkPokemon = 2;
-                
- 
             }
         });
         
@@ -146,8 +134,6 @@ public class GUIChoosePokemon extends JFrame{
                 value3.setText("Damage : " + KC.getDamage());
                 pic.setIcon(new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\pkc1.GIF"));
                 checkPokemon = 3;
-                
- 
             }
         });
         
@@ -155,34 +141,28 @@ public class GUIChoosePokemon extends JFrame{
             public void actionPerformed(ActionEvent epy){
                 if(checkPokemon == 0){
                     setVisible(false);
-                    //new GUIBattleground(BS, bag);
-                    
+                    new GUIstage(BS, bag);    
                 }
                 else if(checkPokemon ==1){
                     setVisible(false);
-                    //new GUIBattleground(MD, bag);
-                    
+                    new GUIstage(MD, bag);
                 }
                 
                 else if(checkPokemon ==2){
                     setVisible(false);
-                   // new GUIBattleground(QT, bag);
-                    
+                    new GUIstage(QT, bag); 
                 }
                 
                 else if(checkPokemon ==3){
                     setVisible(false);
-                  //  new GUIBattleground(KC, bag);
-                    
+                    new GUIstage(KC, bag);
                 }
-                
             }
         });
-        
         setSize(800,600);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);  
-    }    
+        }    
     }  
 
