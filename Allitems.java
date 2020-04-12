@@ -9,15 +9,13 @@ import java.util.Random;
  *
  * @author Admin
  */
-public class Allitems {
+public class Allitems{
     private ArrayList<Item> AllItems;
-    public Healing item1 = Healing("Berry", 30, 10);
-    public Healing item2 = Healing("Potion", 40, 12);
-    public Healing item3 = Healing("Super Potion", 50, 15);
-    public Pokeball item4 = Pokeball("Pokeball",150);
-    
+    public Healing item1 = new Healing("Berry", 30, 10);
+    public Healing item2 = new Healing("Potion", 40, 12);
+    public Healing item3 = new Healing("Super Potion", 50, 15);
+    public Pokeball item4 = new Pokeball("Pokeball",150);
     Random rand = new Random();
-    
     public Allitems(){
         this.AllItems = new ArrayList();
         AllItems.add(item1);
@@ -33,5 +31,4 @@ public class Allitems {
     public Item getItem(int i){
         return AllItems.get(i);
     }
-    
 }
