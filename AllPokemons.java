@@ -13,14 +13,13 @@ public class AllPokemons {
     private Mons1 p2;
     private Mons1 p3;
     private Mons1 p4;
-
-    
+  
     public AllPokemons(){
-        this.p1 = new Mons1("Bulbasaur","Leaf blade",130);
-        this.p2 = new Mons1("Charmander","Fire blaze",145);
+        this.p1 = new Mons1("Bulbasaur","Solar beam",130);
+        this.p2 = new Mons1("Charmander","Fire blast",145);
         this.p3 = new Mons1("Squirtle","Hydro pump",140);
         this.p4 = new Mons1("Pikachu","Thunder bolt",150);
-        
+    } 
     public Mons1 getBBS(){
         return p1;
     }
@@ -36,5 +35,5 @@ public class AllPokemons {
     public Mons1 getPKC(){
         return p4;
     }
-    
 }
+        
