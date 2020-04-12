@@ -17,12 +17,12 @@ public class GUIstage extends JFrame{
     private Monster mB = allMon.ShowMon();
     private Monster mC = allMon.ShowMon();
     
-    /*private TreasuryItem allitem = new TreasuryItem();
-    private Item iA = allitem.ItemDrop();
-    private Item iB = allitem.ItemDrop();
-    private Item iC = allitem.ItemDrop();
+    private Allitems allitem = new Allitems();
+    private Item iA = allitem.dropItem();
+    private Item iB = allitem.dropItem();
+    private Item iC = allitem.dropItem();
     
-    private Wallet Balance = new Wallet();*/
+    //private Wallet Balance = new Wallet();
     
     private UseSkills allskill = new UseSkills();
     private Skills skills;
@@ -39,14 +39,14 @@ public class GUIstage extends JFrame{
     private int myEXP;
     private int myLevel;
     private int myMana;
-    private float myPokeball;
+    private int myPokeball;
     private int countMon;           //
     private boolean kA;
     private boolean kB;
     private boolean kC;
     private int mahp;                 //
     private int mbhp;
-    private int mchp;
+    private int mchp;  //edit float to int
     private int dca = 0;             //
     private int dcb = 0;
     private int dcc = 0;
@@ -79,7 +79,7 @@ public class GUIstage extends JFrame{
         //p.setBackground(Color.black);
         add(p);
         //icon menu
-        ImageIcon iconjb = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconJB.PNG");
+        ImageIcon iconpk = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconJB.PNG");
         ImageIcon iconlv = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconLV.PNG");
         ImageIcon iconexp = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconEXP.PNG");
         ImageIcon iconfight = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconFIGHT.PNG");
@@ -100,6 +100,7 @@ public class GUIstage extends JFrame{
         ImageIcon iconsqt3 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSQT3.GIF");
         ImageIcon iconpkc = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPKC.GIF");
         ImageIcon iconpkc2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPKC2.GIF");
+        //iconEnemy
         ImageIcon iconsnorlax = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconNORLAX.GIF");
         ImageIcon iconlapras = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconLAPRAS.GIF");
         ImageIcon iconlugia = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconLUGIA.GIF");
@@ -107,10 +108,727 @@ public class GUIstage extends JFrame{
         ImageIcon icondarkrai = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconDARKRAI.GIF");
         ImageIcon icongiratina = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconGIRATNIA.GIF");
         ImageIcon iconkyogre = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconKYOGRE.GIF");
-        ImageIcon icondiaga = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconDIALGA.GIF");
+        ImageIcon icondialga = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconDIALGA.GIF");
+        //items
+        ImageIcon iconberry = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\berry.PNG"); //ion
+        ImageIcon potion = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\potion.PNG"); //imt
+        ImageIcon superpotion = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\superpotion.PNG"); //ipt
+        //ImageIcon iconnext = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconNEXT2.PNG"); //idg
+        //ImageIcon isw = new ImageIcon("isw.png");
+        //ImageIcon iar = new ImageIcon("iar.png");
+        //ImageIcon iwn = new ImageIcon("iwn.png");
+        //ImageIcon ikn = new ImageIcon("ikn.png");
+        //ImageIcon igd = new ImageIcon("igd.png");
+        //ImageIcon ict = new ImageIcon("ict.png");
+        ImageIcon sk = new ImageIcon("14.gif");
+        ImageIcon coe = new ImageIcon("kf.gif");
+        
+        
+        //top
+        JPanel p1 = new JPanel();
+        p1.setLayout(new GridLayout(1,5));
+        //  p1.setBackground(Color.darkGray);
+        
+        JLabel imgPK = new JLabel("Name : " + Pokemon.getName(), iconpk, JLabel.LEFT);
+        imgPK.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
+        JLabel imgEXP = new JLabel("EXP : " + myEXP, iconexp, JLabel.LEFT);
+        imgEXP.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
+        JLabel imgLEVEL = new JLabel("Level : " + myLevel, iconlv, JLabel.LEFT);
+        imgLEVEL.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
+        JLabel imgFight = new JLabel("Win : " + countMon, iconfight, JLabel.LEFT);
+        imgFight.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
+        JLabel imgPokeball = new JLabel("EXP : " + myPokeball, iconpokeball, JLabel.LEFT);
+        imgPokeball.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
+        
+        p1.add(imgPK);
+        p1.add(imgEXP);
+        p1.add(imgLEVEL);
+        p1.add(imgFight);
+        p1.add(imgPokeball);
+        
+        p.add(p1,BorderLayout.NORTH);
+        
+                 //CENTER
+        JPanel p3 = new JPanel();
+        p3.setLayout(null);
+       // p3.setBackground(Color.BLACK);
+       
+       
+        JLabel efk = new JLabel("", sk, JLabel.CENTER);
+        JLabel KF = new JLabel("", coe, JLabel.CENTER);
+        //item
+        if(Pokemon.getName().equals("Bulbasaur")){
+            pxnv = new JLabel("",iconbbs, JLabel.CENTER);
+        }
+        else if(Pokemon.getName().equals("Charmander")){
+            pxnv = new JLabel("",iconcmd, JLabel.CENTER);
+        }       
+        else if(Pokemon.getName().equals("Squirtle")){
+            pxnv = new JLabel("",iconsqt, JLabel.CENTER);
+        }         
+        else if(Pokemon.getName().equals("Pikachu")){
+            pxnv = new JLabel("",iconpkc, JLabel.CENTER);
+        } 
+        
+        pxnv.setBounds(61, 150, 100, 100);
+        efk.setBounds(450, 15, 520, 500);
+        KF.setBounds(140, 190, 153, 73);
+        JButton skb = new JButton("Skill : " + skills.getName());
+        skb.setBounds(40, 260, 150, 25);
+        skb.setEnabled(false);
+        
+        JLabel namehp = new JLabel("HP : " + myHP + "/" + Pokemon.getHP(), JLabel.LEFT);
+        namehp.setBounds(75, 69, 100, 100);
+        JLabel def = new JLabel("Def : " + myDEF + "/100", JLabel.LEFT);
+        def.setBounds(75, 79, 100, 100);
+        JLabel mana = new JLabel("Mana : " + myMana + "/100", JLabel.LEFT);
+        mana.setBounds(75, 90, 100, 100);
+        //Monster
+        
+        //Position A
+        JButton bA = new JButton("Attack");
+        
+        if(iA.getName().equals("Berry")){
+            itA = new JLabel(iA.getName(), iconberry, JLabel.LEFT );
+        }
+        else if(iA.getName().equals("Potion")){
+            itA = new JLabel(iA.getName(), potion, JLabel.LEFT );
+        }
+        else if(iA.getName().equals("Super Potion")){
+            itA = new JLabel(iA.getName(), superpotion, JLabel.LEFT );
+        }
 
+        if(mA.getName().equals("Snorlax")){
+            pA = new JLabel(mA.getName() + "/ HP: " + myHP, iconsnorlax, JLabel.LEFT);
+        }
+        else if(mA.getName().equals("Lapras")){
+            pA = new JLabel(mA.getName()+"/ HP: " + myHP, iconlapras, JLabel.LEFT);
+        }       
+        else if(mA.getName().equals("Darkrai")){
+            pA = new JLabel(mA.getName()+"/ HP: " + myHP, icondarkrai, JLabel.LEFT);
+        }
+        else if(mA.getName().equals("Gyarados")){
+            pA = new JLabel(mA.getName()+"/ HP: " + myHP, icongyarados, JLabel.LEFT);
+        }
+        else if(mA.getName().equals("Lugia")){
+            pA = new JLabel(mA.getName()+"/ HP: " + myHP, iconlugia, JLabel.LEFT);
+        }
+        else if(mA.getName().equals("Giratina")){
+            pA = new JLabel(mA.getName()+"/ HP: " + myHP, icongiratina, JLabel.LEFT);
+        }
+        else if(mA.getName().equals("Dialga")){
+            pA = new JLabel(mA.getName()+"/ HP: " + myHP, icondialga, JLabel.LEFT);
+        }
+        else if(mA.getName().equals("Kyogre")){
+            pA = new JLabel(mA.getName()+"/ HP: " + myHP, iconkyogre, JLabel.LEFT);
+        }
+        
+        JButton itAb = new JButton("Select ?");
+        
+        pA.setBounds(720, 25, 500, 160);
+        itA.setBounds(745, 80, 127, 127);
+        itA.setVisible(false);
+        itAb.setVisible(false);
 
+        bA.setBounds(720, 175, 100, 28);
+        itAb.setBounds(720, 175, 100, 28);
+        
+        //Position B
+        
+        JButton bB = new JButton("Attack");
+        
+        if(iB.getName().equals("Berry")){
+            itB = new JLabel(iB.getName(), iconberry, JLabel.LEFT );
+        }
+        else if(iB.getName().equals("Potion")){
+            itB = new JLabel(iB.getName(), potion, JLabel.LEFT );
+        }
+        else if(iB.getName().equals("Super Potion")){
+            itB = new JLabel(iB.getName(), superpotion, JLabel.LEFT );
+        }
+        
+        if(mB.getName().equals("Snorlax")){
+            pB = new JLabel(mB.getName() + "/ HP: " + myHP, iconsnorlax, JLabel.LEFT);
+        }
+        else if(mB.getName().equals("Lapras")){
+            pB = new JLabel(mB.getName()+"/ HP: " + myHP, iconlapras, JLabel.LEFT);
+        }       
+        else if(mB.getName().equals("Darkrai")){
+            pB = new JLabel(mB.getName()+"/ HP: " + myHP, icondarkrai, JLabel.LEFT);
+        }
+        else if(mB.getName().equals("Gyarados")){
+            pB = new JLabel(mB.getName()+"/ HP: " + myHP, icongyarados, JLabel.LEFT);
+        }
+        else if(mB.getName().equals("Lugia")){
+            pB = new JLabel(mB.getName()+"/ HP: " + myHP, iconlugia, JLabel.LEFT);
+        }
+        else if(mB.getName().equals("Giratina")){
+            pB = new JLabel(mB.getName()+"/ HP: " + myHP, icongiratina, JLabel.LEFT);
+        }
+        else if(mB.getName().equals("Dialga")){
+            pB = new JLabel(mB.getName()+"/ HP: " + myHP, icondialga, JLabel.LEFT);
+        }
+        else if(mB.getName().equals("Kyogre")){
+            pB = new JLabel(mB.getName()+"/ HP: " + myHP, iconkyogre, JLabel.LEFT);
+        }
+        
+        JButton itBb = new JButton("Select ?");
+        pB.setBounds(720, 287, 500, 160);
+        bB.setBounds(720, 437, 100, 28);
+        itBb.setBounds(720, 437, 100, 28);
+        itB.setBounds(745, 340, 127, 127);
+        itB.setVisible(false);
+        itBb.setVisible(false);
 
+        //Posintion C
+               JButton bC = new JButton("Attack");
+        
+        if(iC.getName().equals("Berry")){
+            itC = new JLabel(iC.getName(), iconberry, JLabel.LEFT );
+        }
+        else if(iC.getName().equals("Potion")){
+            itC = new JLabel(iC.getName(), potion, JLabel.LEFT );
+        }
+        else if(iC.getName().equals("Super Potion")){
+            itC = new JLabel(iC.getName(), superpotion, JLabel.LEFT );
+        }
 
+        
+        if(mC.getName().equals("Snorlax")){
+            pC = new JLabel(mC.getName() + "/ HP: " + myHP, iconsnorlax, JLabel.LEFT);
+        }
+        else if(mC.getName().equals("Lapras")){
+            pC = new JLabel(mC.getName()+"/ HP: " + myHP, iconlapras, JLabel.LEFT);
+        }       
+        else if(mC.getName().equals("Darkrai")){
+            pC = new JLabel(mC.getName()+"/ HP: " + myHP, icondarkrai, JLabel.LEFT);
+        }
+        else if(mC.getName().equals("Gyarados")){
+            pC = new JLabel(mC.getName()+"/ HP: " + myHP, icongyarados, JLabel.LEFT);
+        }
+        else if(mC.getName().equals("Lugia")){
+            pC = new JLabel(mC.getName()+"/ HP: " + myHP, iconlugia, JLabel.LEFT);
+        }
+        else if(mC.getName().equals("Giratina")){
+            pC = new JLabel(mC.getName()+"/ HP: " + myHP, icongiratina, JLabel.LEFT);
+        }
+        else if(mC.getName().equals("Dialga")){
+            pC = new JLabel(mC.getName()+"/ HP: " + myHP, icondialga, JLabel.LEFT);
+        }
+        else if(mC.getName().equals("Kyogre")){
+            pC = new JLabel(mC.getName()+"/ HP: " + myHP, iconkyogre, JLabel.LEFT);
+        }
+        
+        JButton itCb = new JButton("Select ?");
+        pC.setBounds(500, 170, 500, 160);
+        bC.setBounds(500, 320, 100, 28);
+        itCb.setBounds(500, 320, 100, 28);
+        itC.setBounds(525, 220, 127, 127);
+        itC.setVisible(false);
+        itCb.setVisible(false);
+
+        //Monster
+        p3.add(def);
+        p3.add(mana);
+        p3.add(itAb);
+        p3.add(itBb);
+        p3.add(itCb);
+        p3.add(itA);
+        p3.add(itB);
+        p3.add(itC);
+        
+        p3.add(bA);
+        p3.add(bB);
+        p3.add(bC);
+        p3.add(efk);
+        p3.add(pA);
+        p3.add(pB);
+        p3.add(pC);        
+        
+        p3.add(pxnv);
+        p3.add(namehp);
+        p3.add(skb);
+        p3.add(KF);
+        
+        p.add(p3,BorderLayout.CENTER);
+        
+        //bottom
+        JPanel p2 = new JPanel();
+        JPanel empty = new JPanel();
+        p2.setLayout(new GridLayout(1,3));
+        
+        JButton toBag = new JButton("Bag", iconbag);
+        JButton toShop = new JButton("Shop", iconshop);
+        JButton toCharacter = new JButton("Next", iconnext);
+        toCharacter.setEnabled(false);
+        
+        p2.add(toBag);
+        p2.add(toShop);
+        p2.add(toCharacter);
+        
+        p.add(p2, BorderLayout.SOUTH);
+        
+        //bottom
+
+        //event & handler
+        bA.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent eata){
+                if(mahp == 0 && mbhp == 0 && mchp ==0)
+                    toCharacter.setEnabled(true);
+                
+                efk.setVisible(false);
+                p3.setBackground(null);
+                
+                mahp -= Pokemon.getDamage();
+                myEXP += 10;
+                myMana += 10;
+                
+                if(myDEF > 0){
+                    myDEF -= mA.getMonsterDamage();
+                    myMana += Pokemon.getMana();
+                }
+                else if(myDEF <= 0){
+                    myHP -= mA.getMonsterDamage();
+                    myMana += Pokemon.getMana();                        
+                }
+                
+                //check
+                if(myHP <= 0){
+                    myHP  = 0;
+                }
+                else if(myHP >= Pokemon.getHP()){
+                    myHP += Pokemon.getMana();
+                }
+                
+                if(myDEF <= 0){
+                    myDEF = 0;
+                }
+                else if(myDEF >= 100){
+                    myDEF -= 100;
+                }
+                if(myEXP <= 0){
+                    myEXP = 0;
+                }
+                else if(myEXP >= 100){
+                    myEXP -= 100;
+                    myLevel++;
+                }
+                if(myMana <= 0){
+                    myMana = 0;
+                }
+                else if(myMana >= 100){
+                    myMana = 100;
+                }
+                if(myMana >= skills.getMana()){
+                    skb.setEnabled(true);
+                }
+                
+                if(mahp <= 0){
+                    if(dca == 0){
+                        countMon++;
+                        dca++;
+                    }
+                    
+                    pA.setEnabled(false);
+                    bA.setEnabled(false);
+                    itAb.setVisible(true);
+                    itA.setVisible(true);
+                    
+                    mahp = 0;
+                }
+                else if(mahp >= mA.getHP()){
+                    mahp = mA.getHP(); 
+                }
+                
+                namehp.setText("HP: " + myHP + "/" + Pokemon.getHP());
+                def.setText("Def: " + myDEF + "/" + Pokemon.getDEF());
+                mana.setText("Mana: " + myMana + "/100");
+                imgEXP.setText("EXP: " + myEXP);
+                imgLEVEL.setText("Level: " + myLevel);
+                imgFight.setText("Win: " + countMon);
+                pA.setText(mA.getName()+"/ HP: "+mahp);
+                pB.setText(mB.getName()+"/ HP: "+mbhp);
+                pC.setText(mC.getName()+"/ HP: "+mchp);
+                
+               if(myHP<=0){
+                    JOptionPane.showMessageDialog(null," GAME OVER! ");
+                    setVisible(false);
+                    new GUIstart();
+                }        
+            }
+        });
+        
+        bB.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent eata){
+                if(mahp == 0 && mbhp == 0 && mchp ==0)
+                    toCharacter.setEnabled(true);
+                
+                efk.setVisible(false);
+                p3.setBackground(null);
+                
+                mahp -= Pokemon.getDamage();
+                myEXP += 10;
+                myMana += 10;
+                
+                if(myDEF > 0){
+                    myDEF -= mB.getMonsterDamage();
+                    myMana += Pokemon.getMana();
+                }
+                else if(myDEF <= 0){
+                    myHP -= mB.getMonsterDamage();
+                    myMana += Pokemon.getMana();                        
+                }
+                
+                //check
+                if(myHP <= 0){
+                    myHP  = 0;
+                }
+                else if(myHP >= Pokemon.getHP()){
+                    myHP += Pokemon.getMana();
+                }
+                
+                if(myDEF <= 0){
+                    myDEF = 0;
+                }
+                else if(myDEF >= 100){
+                    myDEF -= 100;
+                }
+                if(myEXP <= 0){
+                    myEXP = 0;
+                }
+                else if(myEXP >= 100){
+                    myEXP -= 100;
+                    myLevel++;
+                }
+                if(myMana <= 0){
+                    myMana = 0;
+                }
+                else if(myMana >= 100){
+                    myMana = 100;
+                }
+                if(myMana >= skills.getMana()){
+                    skb.setEnabled(true);
+                }
+                
+                if(mbhp <= 0){
+                        itBb.setVisible(true);
+                        itB.setVisible(true);
+                        
+                        if(dcb==0){
+                           countMon++;
+                           dcb++;
+                        }
+                        pB.setEnabled(false);
+                        bB.setEnabled(false); 
+                        mbhp = 0;
+                }
+                    else if(mbhp >= mB.getHP())
+                        mbhp = mB.getHP(); 
+                
+                
+                namehp.setText("HP: " + myHP + "/" + Pokemon.getHP());
+                def.setText("Def: " + myDEF + "/" + Pokemon.getDEF());
+                mana.setText("Mana: " + myMana + "/100");
+                imgEXP.setText("EXP: " + myEXP);
+                imgLEVEL.setText("Level: " + myLevel);
+                imgFight.setText("Win: " + countMon);
+                pA.setText(mA.getName()+"/ HP: "+mahp);
+                pB.setText(mB.getName()+"/ HP: "+mbhp);
+                pC.setText(mC.getName()+"/ HP: "+mchp);
+                
+               if(myHP<=0){
+                    JOptionPane.showMessageDialog(null," GAME OVER! ");
+                    setVisible(false);
+                    new GUIstart();
+                }        
+            }
+        
+        });
+        
+         bC.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent eata){
+                if(mahp == 0 && mbhp == 0 && mchp ==0)
+                    toCharacter.setEnabled(true);
+                
+                efk.setVisible(false);
+                p3.setBackground(null);
+                
+                mahp -= Pokemon.getDamage();
+                myEXP += 10;
+                myMana += 10;
+                
+                if(myDEF > 0){
+                    myDEF -= mC.getMonsterDamage();
+                    myMana += Pokemon.getMana();
+                }
+                else if(myDEF <= 0){
+                    myHP -= mC.getMonsterDamage();
+                    myMana += Pokemon.getMana();                        
+                }
+                
+                //check
+                if(myHP <= 0){
+                    myHP  = 0;
+                }
+                else if(myHP >= Pokemon.getHP()){
+                    myHP += Pokemon.getMana();
+                }
+                
+                if(myDEF <= 0){
+                    myDEF = 0;
+                }
+                else if(myDEF >= 100){
+                    myDEF -= 100;
+                }
+                if(myEXP <= 0){
+                    myEXP = 0;
+                }
+                else if(myEXP >= 100){
+                    myEXP -= 100;
+                    myLevel++;
+                }
+                if(myMana <= 0){
+                    myMana = 0;
+                }
+                else if(myMana >= 100){
+                    myMana = 100;
+                }
+                if(myMana >= skills.getMana()){
+                    skb.setEnabled(true);
+                }
+                
+                if(mchp <= 0){
+                        itCb.setVisible(true);
+                        itC.setVisible(true);
+                        
+                        if(dcc == 0){
+                           countMon++;
+                           dcc++;
+                        }
+                        pC.setEnabled(false);
+                        bC.setEnabled(false);                   
+                        mchp = 0;
+                }
+                    else if(mchp >= mC.getHP())
+                        mchp = mC.getHP(); 
+
+                namehp.setText("HP: " + myHP + "/" + Pokemon.getHP());
+                def.setText("Def: " + myDEF + "/" + Pokemon.getDEF());
+                mana.setText("Mana: " + myMana + "/100");
+                imgEXP.setText("EXP: " + myEXP);
+                imgLEVEL.setText("Level: " + myLevel);
+                imgFight.setText("Win: " + countMon);
+                pA.setText(mA.getName()+"/ HP: "+mahp);
+                pB.setText(mB.getName()+"/ HP: "+mbhp);
+                pC.setText(mC.getName()+"/ HP: "+mchp);
+                
+               if(myHP<=0){
+                    JOptionPane.showMessageDialog(null," GAME OVER! ");
+                    setVisible(false);
+                    new GUIstart();
+                }        
+            }
+        });
+        
+        toCharacter.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent eatc){
+                setVisible(false);
+                BBS = new Base(Pokemon.getName(), Pokemon.getBaseSkill(), Pokemon.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
+                new GUIstage(BBS, bag);
+                                
+            }
+        });
+        
+        toBag.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent eatc){
+                setVisible(false);
+                BBS = new Base(Pokemon.getName(), Pokemon.getBaseSkill(), Pokemon.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
+                new GUIstage(BBS, bag);
+                                
+            }
+        });
+        
+        toShop.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent eatc){
+                setVisible(false);
+                BBS = new Base(Pokemon.getName(), Pokemon.getBaseSkill(), Pokemon.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
+                new GUIstage(BBS, bag);
+                                
+            }
+        });
+        
+        itAb.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent eatc){
+                 if(mahp==0 && mbhp==0 && mchp==0)
+                   toCharacter.setEnabled(true);
+                int n = JOptionPane.showConfirmDialog(null,"Select "+iA.getName()+" ?","selected",JOptionPane.YES_NO_OPTION);
+                
+               if(n == JOptionPane.YES_OPTION){
+                   bag.AddItem(iA);
+                   itA.setVisible(false);
+                   itAb.setVisible(false);  
+               }                   
+            }
+        });
+        
+        itBb.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent eatc){
+                 if(mahp==0 && mbhp==0 && mchp==0)
+                   toCharacter.setEnabled(true);
+                int m = JOptionPane.showConfirmDialog(null,"Select "+iB.getName()+" ?","selected",JOptionPane.YES_NO_OPTION);
+                
+                if(m == JOptionPane.YES_OPTION){
+                   bag.AddItem(iB);
+                   itB.setVisible(false);
+                   itBb.setVisible(false); 
+               }                    
+            }
+        });
+        
+        itCb.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent eatc){
+                 if(mahp==0 && mbhp==0 && mchp==0)
+                   toCharacter.setEnabled(true);
+                int o = JOptionPane.showConfirmDialog(null,"Select "+iC.getName()+" ?","Selected",JOptionPane.YES_NO_OPTION);
+                if(o == JOptionPane.YES_OPTION){
+                   bag.AddItem(iC);
+                   itC.setVisible(false);
+                   itCb.setVisible(false);   
+               }                   
+            }
+        });
+        
+        skb.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent eatc){
+                  skb.setEnabled(false);
+                  JOptionPane.showMessageDialog(null,"Skill: "+skills.getName()+" (Heal: "+skills.getheal()+" Damage: "+skills.getDamage()+")");
+                  p3.setBackground(Color.black);
+                  
+                    if(mahp==0 && mbhp==0 && mchp==0)
+                        toCharacter.setEnabled(true);
+            
+                if(Pokemon.getName().equals("Bulbasaur")){
+                    efk.setIcon(new ImageIcon("swk.gif"));
+
+                }
+
+                else if(Pokemon.getName().equals("Charmander")){
+                    efk.setIcon(new ImageIcon("ack.gif"));
+
+                }
+                
+                else if(Pokemon.getName().equals("Squirtle")){
+                    efk.setIcon(new ImageIcon("ack.gif"));
+
+                }
+                else if(Pokemon.getName().equals("Pikachu")){
+                    efk.setIcon(new ImageIcon("ack.gif"));
+
+                }
+                
+                efk.setVisible(true);
+                
+                myHP += skills.getheal();
+                myMana -= skills.getMana();
+                myEXP += 25;
+                
+                mahp -= skills.getDamage();
+                mbhp -= skills.getDamage();
+                mchp -= skills.getDamage();
+                
+                //check
+                if(myHP <= 0){
+                    myHP = 0;
+                }
+                
+                else if(myHP >= Pokemon.getHP()){
+                    myHP = Pokemon.getHP(); 
+                }
+                
+                if(myDEF <= 0){
+                    myDEF = 0;
+                }
+                
+                else if(myDEF >= 100){
+                    myDEF -= 100;                    
+                }
+                
+                if(myEXP <= 0){
+                    myEXP = 0;
+                }
+                else if(myEXP >= 100){
+                    myEXP -= 100;
+                    myLevel++;
+                }
+                
+                if(myMana <= 0){
+                    myMana = 0;
+                }
+                
+                else if(myMana >= 100){
+                    myMana = 100;
+                }
+                
+                if(mahp <= 0){
+                        
+                        pA.setEnabled(false);
+                        bA.setEnabled(false); 
+                        if(dca==0){
+                           itAb.setVisible(true);
+                           itA.setVisible(true);
+                           countMon++;
+                           dca++;
+                        }
+                         
+                        mahp = 0;}
+                    else if(mahp >= mA.getHP())
+                        mahp = mA.getHP();
+                
+                if(mbhp <= 0){
+                        
+                        pB.setEnabled(false);
+                        bB.setEnabled(false); 
+                        if(dcb==0){
+                           itBb.setVisible(true);
+                           itB.setVisible(true);
+                           countMon++;
+                           dcb++;
+                        }
+                        mbhp = 0;}
+                    else if(mbhp >= mB.getHP())
+                        mbhp = mB.getHP();
+                
+                if(mchp <= 0){
+                        
+                        pC.setEnabled(false);
+                        bC.setEnabled(false); 
+                        if(dcc==0){
+                           itCb.setVisible(true);
+                           itC.setVisible(true);
+                           countMon++;
+                           dcc++;
+                        }
+                        mchp = 0;}
+                    else if(mchp >= mC.getHP())
+                        mchp = mC.getHP();
+                
+                //update
+                
+                namehp.setText("HP: " + myHP + "/" + Pokemon.getHP());
+                def.setText("DEF: " + myDEF + "/100");
+                mana.setText("Mana: " + myMana + "/100");
+                imgEXP.setText("EXP: " + myEXP);
+                imgLEVEL.setText("Level: "+myLevel);
+                imgFight.setText("Win: "+countMon);
+                pA.setText(mA.getName()+"/ HP: "+mahp);
+                pB.setText(mB.getName()+"/ HP: "+mbhp);
+                pC.setText(mC.getName()+"/ HP: "+mchp);    
+            }
+        });       
+        setSize(800,600);
+        setResizable(false);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
     }
-}
+}    
+
