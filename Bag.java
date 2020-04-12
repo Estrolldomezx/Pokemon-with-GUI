@@ -15,8 +15,7 @@ public class Bag {
     
     public Bag(){
         items = new ArrayList<Item>();
-        MaxBag = 20;
-        
+        MaxBag = 20;   
     }
     
     public boolean AddItem(Item item){
@@ -25,15 +24,13 @@ public class Bag {
             return true;
         }
         else
-            return false;
-            
+            return false;       
     }
     
     public void ItemList(){
         for(Item item : items){
             System.out.println(item);
-        }
-            
+        }     
     }
     
     public int findItem(String NameItem)
@@ -46,15 +43,13 @@ public class Bag {
             return i;
         }
     } 
-   
     return -1;
     }
     
     public void removeItem(int index){
         if(index >= 0 && index <= items.size()){
             items.remove(index);
-        }
-         
+        }    
     }
     
     public int countItem(String nameitem){
@@ -67,7 +62,6 @@ public class Bag {
             count++;
         }
     } 
-   
     return count;    
     }
 }
