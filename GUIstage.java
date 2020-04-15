@@ -12,7 +12,11 @@ import java.util.concurrent.TimeUnit;
  * @author Admin
  */
 public class GUIstage extends JFrame{
-    private SendMons allMon  = new SendMons();
+    /**
+     *
+     */
+    //private static long serialVersionUID = 1L;
+    private SendMons allMon = new SendMons();
     private Monster mA = allMon.ShowMon();
     private Monster mB = allMon.ShowMon();
     private Monster mC = allMon.ShowMon();
@@ -26,7 +30,7 @@ public class GUIstage extends JFrame{
     
     private UseSkills allskill = new UseSkills();
     private Skills skills;
-    private Base BBS;
+    //private Base BBS;
     private JLabel pxnv;
     private JLabel pA;
     private JLabel pB;
@@ -34,22 +38,22 @@ public class GUIstage extends JFrame{
     private JLabel itA;
     private JLabel itB;
     private JLabel itC;
-    private int myHP;
-    private int myDEF;
-    private int myEXP;
-    private int myLevel;
-    private int myMana;
-    private int myPokeball;
-    private int countMon;           //
-    private boolean kA;
-    private boolean kB;
-    private boolean kC;
-    private int mahp;                 //
-    private int mbhp;
-    private int mchp;  //edit float to int
-    private int dca = 0;             //
-    private int dcb = 0;
-    private int dcc = 0;
+    private final int myHP;
+    private final int myDEF;
+    private final int myEXP;
+    private final int myLevel;
+    private final int myMana;
+    private final int myPokeball;
+    private final int countMon;           //
+    ///private boolean kA;
+    //private boolean kB;
+    //private boolean kC;
+    private final int mahp;                 //
+    private final int mbhp;
+    private final int mchp;  //edit float to int
+    private final int dca = 0;             //
+    private final int dcb = 0;
+    private final int dcc = 0;
     
     public GUIstage(Base Pokemon, Bag bag){
         super("Battle Stage");
@@ -84,29 +88,33 @@ public class GUIstage extends JFrame{
         ImageIcon iconexp = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconEXP.PNG");
         ImageIcon iconfight = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconFIGHT.PNG");
         ImageIcon iconpokeball = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPOKEBALL.PNG");
-        ImageIcon iconbag = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBAG.PNG");
-        ImageIcon iconshop = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSHOP.PNG");
-        ImageIcon iconnext = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconNEXT2.PNG");
+        ImageIcon iconbag = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBAG2.PNG");
+        ImageIcon iconshop = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSHOP2.PNG");
+        ImageIcon iconnext = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconNEXT3.PNG");
         
         //icon pokemon
         ImageIcon iconbbs = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBBS.GIF");
-        ImageIcon iconbbs2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBBS2.GIF");
-        ImageIcon iconbbs3 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBBS3.GIF");
+        ImageIcon newbbs = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stageBBS.GIF");
+        //*ImageIcon iconbbs2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBBS2.GIF");
+        //*ImageIcon iconbbs3 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBBS3.GIF");
         ImageIcon iconcmd = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconCMD.GIF");
-        ImageIcon iconcmd2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconCMD2.GIF");
-        ImageIcon iconcmd3 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconCMD3.GIF");
+        ImageIcon newcmd = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\test.GIF");
+        //*ImageIcon iconcmd2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconCMD2.GIF");
+        //*ImageIcon iconcmd3 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconCMD3.GIF");
         ImageIcon iconsqt = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSQT1.GIF");
-        ImageIcon iconsqt2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSQT2.GIF");
-        ImageIcon iconsqt3 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSQT3.GIF");
+        ImageIcon newsqt = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stageSQT.GIF");
+        //*ImageIcon iconsqt2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSQT2.GIF");
+        //*ImageIcon iconsqt3 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSQT3.GIF");
         ImageIcon iconpkc = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPKC.GIF");
-        ImageIcon iconpkc2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPKC2.GIF");
+        ImageIcon newpkc = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stagePKC.GIF");
+        //*ImageIcon iconpkc2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPKC2.GIF");
         //iconEnemy
         ImageIcon iconsnorlax = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconNORLAX.GIF");
         ImageIcon iconlapras = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconLAPRAS.GIF");
         ImageIcon iconlugia = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconLUGIA.GIF");
         ImageIcon icongyarados = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconGYARADOS.GIF");
         ImageIcon icondarkrai = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconDARKRAI.GIF");
-        ImageIcon icongiratina = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconGIRATNIA.GIF");
+        ImageIcon icongiratina = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconGIRATINA.GIF");
         ImageIcon iconkyogre = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconKYOGRE.GIF");
         ImageIcon icondialga = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconDIALGA.GIF");
         //items
@@ -158,16 +166,16 @@ public class GUIstage extends JFrame{
         JLabel KF = new JLabel("", coe, JLabel.CENTER);
         //item
         if(Pokemon.getName().equals("Bulbasaur")){
-            pxnv = new JLabel("",iconbbs, JLabel.CENTER);
+            pxnv = new JLabel("", newbbs, JLabel.CENTER);
         }
         else if(Pokemon.getName().equals("Charmander")){
-            pxnv = new JLabel("",iconcmd, JLabel.CENTER);
+            pxnv = new JLabel("", newcmd, JLabel.CENTER);
         }       
         else if(Pokemon.getName().equals("Squirtle")){
-            pxnv = new JLabel("",iconsqt, JLabel.CENTER);
+            pxnv = new JLabel("", newsqt, JLabel.CENTER);
         }         
         else if(Pokemon.getName().equals("Pikachu")){
-            pxnv = new JLabel("",iconpkc, JLabel.CENTER);
+            pxnv = new JLabel("", newpkc, JLabel.CENTER);
         } 
         
         pxnv.setBounds(61, 150, 100, 100);
@@ -183,6 +191,15 @@ public class GUIstage extends JFrame{
         def.setBounds(75, 79, 100, 100);
         JLabel mana = new JLabel("Mana : " + myMana + "/100", JLabel.LEFT);
         mana.setBounds(75, 90, 100, 100);
+        
+        //novice
+        /*if(pweapon.equals("CoE"))
+            KF.setVisible(true);
+        else
+            KF.setVisible(false);
+            
+         */
+        
         //Monster
         
         //Position A
@@ -197,7 +214,28 @@ public class GUIstage extends JFrame{
         else if(iA.getName().equals("Super Potion")){
             itA = new JLabel(iA.getName(), superpotion, JLabel.LEFT );
         }
-
+        /*else if(iA.getName().equals("Super Potion")){                                  //idg
+            itA = new JLabel(iA.getName(), superpotion, JLabel.LEFT );
+        }    */   
+        /*else if(iA.getName().equals("Sword")){
+            itA = new JLabel(iA.getName(),isw,JLabel.LEFT);
+        }
+        else if(iA.getName().equals("Arrow")){
+            itA = new JLabel(iA.getName(),iar,JLabel.LEFT);
+        }
+        else if(iA.getName().equals("Wand")){
+            itA = new JLabel(iA.getName(),iwn,JLabel.LEFT);
+        }
+        else if(iA.getName().equals("Knife")){
+            itA = new JLabel(iA.getName(),ikn,JLabel.LEFT);
+        }
+        else if(iA.getName().equals("Gold")){
+            itA = new JLabel(iA.getName(),igd,JLabel.LEFT);
+        }
+        else{
+            itA = new JLabel(iA.getName(),ict,JLabel.LEFT);
+        }  */
+        
         if(mA.getName().equals("Snorlax")){
             pA = new JLabel(mA.getName() + "/ HP: " + myHP, iconsnorlax, JLabel.LEFT);
         }
@@ -225,13 +263,13 @@ public class GUIstage extends JFrame{
         
         JButton itAb = new JButton("Select ?");
         
-        pA.setBounds(720, 25, 500, 160);
-        itA.setBounds(745, 80, 127, 127);
+        //pA.setBounds(720, 25, 500, 160);
+       //itA.setBounds(745, 80, 127, 127);
         itA.setVisible(false);
         itAb.setVisible(false);
 
-        bA.setBounds(720, 175, 100, 28);
-        itAb.setBounds(720, 175, 100, 28);
+        //bA.setBounds(720, 175, 100, 28);
+        //itAb.setBounds(720, 175, 100, 28);
         
         //Position B
         
@@ -246,6 +284,27 @@ public class GUIstage extends JFrame{
         else if(iB.getName().equals("Super Potion")){
             itB = new JLabel(iB.getName(), superpotion, JLabel.LEFT );
         }
+        /*else if(iA.getName().equals("Super Potion")){                                  //idg
+            itA = new JLabel(iA.getName(), superpotion, JLabel.LEFT );
+        }    */   
+        /*else if(iA.getName().equals("Sword")){
+            itA = new JLabel(iA.getName(),isw,JLabel.LEFT);
+        }
+        else if(iA.getName().equals("Arrow")){
+            itA = new JLabel(iA.getName(),iar,JLabel.LEFT);
+        }
+        else if(iA.getName().equals("Wand")){
+            itA = new JLabel(iA.getName(),iwn,JLabel.LEFT);
+        }
+        else if(iA.getName().equals("Knife")){
+            itA = new JLabel(iA.getName(),ikn,JLabel.LEFT);
+        }
+        else if(iA.getName().equals("Gold")){
+            itA = new JLabel(iA.getName(),igd,JLabel.LEFT);
+        }
+        else{
+            itA = new JLabel(iA.getName(),ict,JLabel.LEFT);
+        }  */
         
         if(mB.getName().equals("Snorlax")){
             pB = new JLabel(mB.getName() + "/ HP: " + myHP, iconsnorlax, JLabel.LEFT);
@@ -292,7 +351,27 @@ public class GUIstage extends JFrame{
         else if(iC.getName().equals("Super Potion")){
             itC = new JLabel(iC.getName(), superpotion, JLabel.LEFT );
         }
-
+        /*else if(iA.getName().equals("Super Potion")){                                  //idg
+            itA = new JLabel(iA.getName(), superpotion, JLabel.LEFT );
+        }    */   
+        /*else if(iA.getName().equals("Sword")){
+            itA = new JLabel(iA.getName(),isw,JLabel.LEFT);
+        }
+        else if(iA.getName().equals("Arrow")){
+            itA = new JLabel(iA.getName(),iar,JLabel.LEFT);
+        }
+        else if(iA.getName().equals("Wand")){
+            itA = new JLabel(iA.getName(),iwn,JLabel.LEFT);
+        }
+        else if(iA.getName().equals("Knife")){
+            itA = new JLabel(iA.getName(),ikn,JLabel.LEFT);
+        }
+        else if(iA.getName().equals("Gold")){
+            itA = new JLabel(iA.getName(),igd,JLabel.LEFT);
+        }
+        else{
+            itA = new JLabel(iA.getName(),ict,JLabel.LEFT);
+        }  */
         
         if(mC.getName().equals("Snorlax")){
             pC = new JLabel(mC.getName() + "/ HP: " + myHP, iconsnorlax, JLabel.LEFT);
@@ -323,8 +402,8 @@ public class GUIstage extends JFrame{
         pC.setBounds(500, 170, 500, 160);
         bC.setBounds(500, 320, 100, 28);
         itCb.setBounds(500, 320, 100, 28);
-        itC.setBounds(525, 220, 127, 127);
-        itC.setVisible(false);
+        //itC.setBounds(525, 220, 127, 127);
+        //itC.setVisible(false);
         itCb.setVisible(false);
 
         //Monster
@@ -353,23 +432,26 @@ public class GUIstage extends JFrame{
         p.add(p3,BorderLayout.CENTER);
         
         //bottom
+        
         JPanel p2 = new JPanel();
-        JPanel empty = new JPanel();
+        //*JPanel empty = new JPanel();
         p2.setLayout(new GridLayout(1,3));
         
         JButton toBag = new JButton("Bag", iconbag);
         JButton toShop = new JButton("Shop", iconshop);
         JButton toCharacter = new JButton("Next", iconnext);
         toCharacter.setEnabled(false);
+
         
         p2.add(toBag);
         p2.add(toShop);
         p2.add(toCharacter);
         
         p.add(p2, BorderLayout.SOUTH);
-        
+      
         //bottom
-
+        
+        /*
         //event & handler
         bA.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent eata){
@@ -453,9 +535,11 @@ public class GUIstage extends JFrame{
                if(myHP<=0){
                     JOptionPane.showMessageDialog(null," GAME OVER! ");
                     setVisible(false);
+                    
                     new GUIstart();
                 }        
             }
+        
         });
         
         bB.addActionListener(new ActionListener(){
@@ -520,6 +604,8 @@ public class GUIstage extends JFrame{
                         }
                         pB.setEnabled(false);
                         bB.setEnabled(false); 
+                        
+                        
                         mbhp = 0;
                 }
                     else if(mbhp >= mB.getHP())
@@ -539,6 +625,7 @@ public class GUIstage extends JFrame{
                if(myHP<=0){
                     JOptionPane.showMessageDialog(null," GAME OVER! ");
                     setVisible(false);
+                    
                     new GUIstart();
                 }        
             }
@@ -606,12 +693,15 @@ public class GUIstage extends JFrame{
                            dcc++;
                         }
                         pC.setEnabled(false);
-                        bC.setEnabled(false);                   
+                        bC.setEnabled(false); 
+                        
+                        
                         mchp = 0;
                 }
                     else if(mchp >= mC.getHP())
                         mchp = mC.getHP(); 
-
+                
+                
                 namehp.setText("HP: " + myHP + "/" + Pokemon.getHP());
                 def.setText("Def: " + myDEF + "/" + Pokemon.getDEF());
                 mana.setText("Mana: " + myMana + "/100");
@@ -625,9 +715,11 @@ public class GUIstage extends JFrame{
                if(myHP<=0){
                     JOptionPane.showMessageDialog(null," GAME OVER! ");
                     setVisible(false);
+                    
                     new GUIstart();
                 }        
             }
+        
         });
         
         toCharacter.addActionListener(new ActionListener(){
@@ -824,11 +916,17 @@ public class GUIstage extends JFrame{
                 pB.setText(mB.getName()+"/ HP: "+mbhp);
                 pC.setText(mC.getName()+"/ HP: "+mchp);    
             }
-        });       
-        setSize(800,600);
+        });    
+                
+                
+         */      
+        setSize(1020,676);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
+    
+    
+    
 }    
 
