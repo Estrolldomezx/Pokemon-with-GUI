@@ -12,11 +12,14 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.border.EtchedBorder;
-import java.awt.image.BufferedImage;
+//import java.util.EventListener;
 
 
 public class GUIChoosePokemon extends JFrame{
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private AllPokemons getPokemons = new AllPokemons();
     private Bag bag = new Bag();
     private Mons1  BBS = getPokemons.getBBS();
@@ -24,10 +27,10 @@ public class GUIChoosePokemon extends JFrame{
     private Mons1  SQT = getPokemons.getSQT();
     private Mons1  PKC = getPokemons.getPKC();
     
-    private Base /*novice*/ BS = new Base(BBS.getJName(), BBS.getJSkill(),14,130,0,0,0,0,0,0);
-    private Base /*novice*/ MD = new Base(CMD.getJName(), CMD.getJSkill(),15,145,0,0,0,0,0,0);
-    private Base /*novice*/ QT = new Base(SQT.getJName(), SQT.getJSkill(),10,140,0,0,0,0,0,0);
-    private Base /*novice*/ KC = new Base(PKC.getJName(), PKC.getJSkill(),13,150,0,0,0,0,0,0);
+    private Base  BS = new Base(BBS.getJName(), BBS.getJSkill(),14,130,0,0,0,0,0,0);
+    private Base  MD = new Base(CMD.getJName(), CMD.getJSkill(),15,145,0,0,0,0,0,0);
+    private Base  QT = new Base(SQT.getJName(), SQT.getJSkill(),10,140,0,0,0,0,0,0);
+    private Base  KC = new Base(PKC.getJName(), PKC.getJSkill(),13,150,0,0,0,0,0,0);
     
     private int checkPokemon = 0;
     
@@ -36,27 +39,34 @@ public class GUIChoosePokemon extends JFrame{
         JPanel c = new JPanel();
         c.setLayout(new BorderLayout());
         add(c);
-        
-        ImageIcon bs = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\111.GIF");
-        ImageIcon md = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\222.GIF");
-        ImageIcon qt = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\333.GIF");
-        ImageIcon kc = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\444.GIF");
-        ImageIcon pogo = new ImageIcon("img/icon2.png");
+        //C:\Users\Admin\Desktop\Y 2\ปี 2 เทอม 2\OOP\assignment Final Domeeeeeeeeeeeee\Pokemon\src\main\java\img
+        ImageIcon bs = new ImageIcon("img/111.GIF");
+        ImageIcon md = new ImageIcon("img/222.GIF");
+        ImageIcon qt = new ImageIcon("img/333.GIF"); 
+        ImageIcon kc = new ImageIcon("img/444.GIF");
+        ImageIcon border = new ImageIcon("img/border.PNG");
+        ImageIcon pogo = new ImageIcon("img/iconFIGHT2.PNG");
         
         JLabel title = new JLabel("CHOOSE YOUR BUDDY",JLabel.CENTER);
         title.setFont(new Font("karma future", Font.TRUETYPE_FONT, 38));
         title.setForeground(Color.RED);
         //title.setBackground(Color.ORANGE);
         c.add(title, BorderLayout.NORTH);
-
+        
+   
+        JLabel Border = new JLabel("", border,JLabel.CENTER);
+        c.add(Border, BorderLayout.CENTER);
         JLabel pic;
         pic = new JLabel("", bs,JLabel.CENTER);
         c.add(pic,BorderLayout.WEST);
+        pic.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0));
         
         
         JPanel c1 = new JPanel();
         c1.setLayout(new GridLayout(8,1));
-        
+        c1.setBorder(BorderFactory.createEmptyBorder(60, 0, 0, 60));
+        //c1.setBounds(300, 400, 200, 200);
+        //getContentPane().add(c1);
         
         JLabel value = new JLabel("Pokemon : " + BS.getName(), JLabel.LEFT);
         value.setFont(new Font("Karma suture", Font.BOLD, 24));
@@ -66,6 +76,9 @@ public class GUIChoosePokemon extends JFrame{
         value2.setFont(new Font("Karma suture", Font.BOLD, 24));
         JLabel value3 = new JLabel("Damage : " + BS.getDamage(), JLabel.LEFT);
         value3.setFont(new Font("Karma suture", Font.BOLD, 24));
+        JLabel value4 = new JLabel("      ", JLabel.LEFT);
+        value3.setFont(new Font("Karma suture", Font.BOLD, 24));
+
         //JLabel inf4 = new JLabel("Weapon: "+Base.getWeapon(),JLabel.LEFT);
         //inf4.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
 
@@ -73,7 +86,7 @@ public class GUIChoosePokemon extends JFrame{
         c1.add(value1);
         c1.add(value2);
         c1.add(value3);
-        //c1.add(value4);
+
         
         c.add(c1,BorderLayout.EAST);
         JPanel c2 = new JPanel();
@@ -88,7 +101,7 @@ public class GUIChoosePokemon extends JFrame{
         buttonSQT.setFont(new Font("Pokemon Gb", Font.BOLD, 12));
         JButton buttonPKC = new JButton("Pikachu");
         buttonPKC.setFont(new Font("Pokemon Gb", Font.BOLD, 12));
-        JButton play = new JButton("READY !",pogo);
+        JButton play = new JButton("",pogo);
         play.setFont(new Font("Pokemon Gb", Font.BOLD, 14));
         c.add(play,BorderLayout.SOUTH);
         /*JButton bttf = new JButton("THEIF");
@@ -114,16 +127,13 @@ public class GUIChoosePokemon extends JFrame{
         c.add(c2,BorderLayout.SOUTH);
         
         buttonBBS.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent env){
+            public void actionPerformed(ActionEvent ebs){
                 value.setText("Name : " + BS.getName());
                 value1.setText("HP : " + BS.getHP());
                 value2.setText("Skill : " + BS.getBaseSkill());
-                //inf3.setText("Weapon  "+NV.getWeapon());
                 value3.setText("Damage : " + BS.getDamage());
-                //pic.setIcon(new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBBS.GIF"));
                 pic.setIcon(bs);
-                //c.add(title, BorderLayout.NORTH);
-                //pic.locate(400, 400);
+
                 checkPokemon = 0;
                 
  
@@ -131,13 +141,11 @@ public class GUIChoosePokemon extends JFrame{
         });
         
         buttonCMD.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent env){
+            public void actionPerformed(ActionEvent emd){
                 value.setText("Name : " + MD.getName());
                 value1.setText("HP : " + MD.getHP());
                 value2.setText("Skill : " + MD.getBaseSkill());
-                //inf3.setText("Weapon  "+NV.getWeapon());
                 value3.setText("Damage : " + MD.getDamage());
-                //pic.setIcon(new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconCMD.GIF"));
                 pic.setIcon(md);
                 checkPokemon = 1;
                 
@@ -146,11 +154,10 @@ public class GUIChoosePokemon extends JFrame{
         });
         
         buttonSQT.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent env){
+            public void actionPerformed(ActionEvent eqt){
                 value.setText("Name : " + QT.getName());
                 value1.setText("HP : " + QT.getHP());
                 value2.setText("Skill : " + QT.getBaseSkill());
-                //inf3.setText("Weapon  "+NV.getWeapon());
                 value3.setText("Damage : " + QT.getDamage());
                 pic.setIcon(new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSQT1.GIF")); 
                 pic.setIcon(qt);
@@ -161,13 +168,11 @@ public class GUIChoosePokemon extends JFrame{
         });
         
         buttonPKC.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent env){
+            public void actionPerformed(ActionEvent ekc){
                 value.setText("Name : " + KC.getName());
                 value1.setText("HP : " + KC.getHP());
                 value2.setText("Skill : " + KC.getBaseSkill());
-                //inf3.setText("Weapon  "+NV.getWeapon());
                 value3.setText("Damage : " + KC.getDamage());
-                pic.setIcon(new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPKC.GIF"));
                 pic.setIcon(kc);
                 checkPokemon = 3;
                 
