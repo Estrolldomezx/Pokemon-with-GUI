@@ -26,9 +26,7 @@ public class Allitems{
     }
 
     public Item dropItem(){
-        int i;
-        //i = rand.nextInt(3);
-        i = Math.random()*3;
+        int i= (int)(Math.random()*3);   
         try{
             if(i == 0 || i == 1 || i == 2 || i ==3)
                 return Allitem1.get(i);
