@@ -115,7 +115,7 @@ public class GUIstage extends JFrame{
         //*ImageIcon iconpkc2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPKC2.GIF");
         //iconEnemy
         ImageIcon iconsnorlax = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconNORLAX.GIF");
-        ImageIcon iconlapras = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\enew\\iconLAPRAS.GIF");
+        ImageIcon iconlapras = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconLAPRAS.GIF");
         ImageIcon iconlugia = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconLUGIA.GIF");
         ImageIcon icongyarados = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconGYARADOS.GIF");
         ImageIcon icondarkrai = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconDARKRAI.GIF");
