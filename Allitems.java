@@ -29,7 +29,7 @@ public class Allitems{
         int i= (int)(Math.random()*3);   
         try{
             if(i == 0 || i == 1 || i == 2 || i ==3)
-                return Allitem1.get(i);
+                return AllItem1.get(i);
         }    
         catch(IndexOutOfBoundsException e){
             System.out.printf("Error random");
