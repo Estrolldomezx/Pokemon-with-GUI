@@ -7,9 +7,10 @@ import java.awt.event.*;
 
 public class GUIbag extends JFrame{
     private Allitems allitems = new Allitems();
-    private int berry; //on
-    private int potion;  //mt
-    private int superpotion;  //pt
+    private int berry = 0; 
+    private int potion = 0;  
+    private int superpotion = 0;  
+    private int item4;
     private int item5;
     private int item6;
     private int item7;
@@ -22,7 +23,7 @@ public class GUIbag extends JFrame{
     private int pexp;
     private int plevel;
     private int pmana;
-    private int ppokeball = 50;   //float pmoney
+    private int ppokeball = 50;  
     private int countMon;
 
     private Base fb;
@@ -32,6 +33,7 @@ public class GUIbag extends JFrame{
         this.berry = bag.countItem("Berry"); //on
         this.potion = bag.countItem("Potion"); //mt
         this.superpotion = bag.countItem("Superpotion"); //pt
+        this.item4 = bag.countItem("Upgrade");
         this.item5 = bag.countItem("Dragon Scale");
         this.item6 = bag.countItem("King Rock");
         this.item7 = bag.countItem("Metal Coat");
@@ -47,11 +49,12 @@ public class GUIbag extends JFrame{
         this.countMon = base.getKillmon();
         this.ppokeball = base.getPokeball();
 
-        ImageIcon imgPotion = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\potion.PNG"); //ion
+        ImageIcon imgPotion = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\potion.PNG");
         ImageIcon imgBerry = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\berry.PNG");
         ImageIcon imgsuperpotion = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\superpotion.PNG");
         ImageIcon imgHP = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconHP.PNG");
         ImageIcon imgPokeball = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconPokeballBag.PNG");
+        ImageIcon imgitem4 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\Upgrade.PNG");
         ImageIcon imgitem5 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\DragonScale.PNG");
         ImageIcon imgitem6 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\KingRock.PNG");
         ImageIcon imgitem7 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\MetalCoat.PNG");
@@ -65,19 +68,22 @@ public class GUIbag extends JFrame{
         JPanel p = new JPanel();
         p.setLayout(new BorderLayout());
 
+        JButton test = new JButton("test");
+        p.add(test);
         int i; //n
-        i = berry + potion + superpotion;
-
+        i = berry + potion + superpotion + item4 + item5 + item6 + item7 + item8 + item9 + item10;
         // pn
         JPanel pn = new JPanel();
-
         JLabel ds = new JLabel("All items : " + i, imgiemt, JLabel.CENTER);
+
         ds.setFont(new Font("Eras Demi ITC", Font.BOLD, 15));
+
         pn.add(ds);
+        
         p.add(pn, BorderLayout.NORTH);
 
         // end of pn
-
+   
         //p3
         JPanel p3 = new JPanel();
         p3.setLayout(new BorderLayout());
@@ -111,7 +117,7 @@ public class GUIbag extends JFrame{
 
         //p1
         JPanel p1 = new JPanel();
-        p1.setLayout(new GridLayout(3,1));
+        p1.setLayout(new GridLayout(6,1));
 
         JLabel use = new JLabel("REDEEM", JLabel.CENTER);
         use.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
@@ -119,11 +125,15 @@ public class GUIbag extends JFrame{
         JButton berryButton = new JButton(allitems.item1.getName()+" (" + berry + ")",imgBerry);
         JButton potionButton = new JButton(allitems.item2.getName()+" (" + potion + ")",imgPotion);
         JButton superpotionButton = new JButton(allitems.item3.getName()+" (" + superpotion + ")",imgsuperpotion);
+        JButton item4Button = new JButton(allitems.item4.getName()+" (" + item4 + ")",imgitem4);
+        JButton item5Button = new JButton(allitems.item5.getName()+" ("+item5+")", imgitem5);
 
         p1.add(use);
         p1.add(berryButton);
         p1.add(potionButton);
         p1.add(superpotionButton);
+        p1.add(item4Button);
+        p1.add(item5Button);
         //end of p1
 
         //p2
@@ -132,7 +142,6 @@ public class GUIbag extends JFrame{
         JLabel sell = new JLabel("SELL & TRADE", JLabel.CENTER);
         sell.setFont(new Font("Eras Demi ITC", Font.BOLD, 18)); 
         //add stones
-        JButton item5Button = new JButton(allitems.item5.getName()+" ("+item5+")", imgitem5);
         JButton item6Button = new JButton(allitems.item6.getName()+" ("+item6+")", imgitem6);
         JButton item7Button = new JButton(allitems.item7.getName()+" ("+item7+")", imgitem7);
         JButton item8Button = new JButton(allitems.item8.getName()+" ("+item8+")", imgitem8);
@@ -150,6 +159,9 @@ public class GUIbag extends JFrame{
         }
         if(superpotion <=0){
             superpotionButton.setEnabled(false);
+        }
+        if(item4 <=0){
+            item4Button.setEnabled(false);
         }
         if(item5 <=0){
             item5Button.setEnabled(false);
@@ -171,7 +183,6 @@ public class GUIbag extends JFrame{
         }
 
         p2.add(sell);
-        p2.add(item5Button);
         p2.add(item6Button);
         p2.add(item7Button);
         p2.add(item8Button);
@@ -414,7 +425,7 @@ public class GUIbag extends JFrame{
             }
         });        
 
-        //setSize(800,600);
+        //setSize(1280,700);
         setSize(563,605);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
