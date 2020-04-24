@@ -375,7 +375,7 @@ toCharacter.addActionListener(new ActionListener(){
     public void actionPerformed(ActionEvent eatc){
         setVisible(false);
         BBS = new Base(Pokemons.getName(), Pokemons.getBaseSkill(), Pokemons.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
-        new GUIbag(BBS, bag);
+        new GUImenu();
                         
     }
 });
