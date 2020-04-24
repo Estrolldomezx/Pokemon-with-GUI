@@ -112,6 +112,7 @@ public class GUIstage2 extends JFrame{
         ImageIcon iconberry = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\berry.PNG"); //ion
         ImageIcon potion = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\potion.PNG"); //imt
         ImageIcon superpotion = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\superpotion.PNG"); //ipt
+        ImageIcon item4 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\Upgrade.PNG");
         ImageIcon item5 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\DragonScale.PNG");
         ImageIcon item6 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\KingRock.PNG");
         ImageIcon item7 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\MetalCoat.PNG");
@@ -178,16 +179,21 @@ public class GUIstage2 extends JFrame{
                 JLabel def = new JLabel("Def : " + myDEF + "/100", JLabel.LEFT);
                 JLabel mana = new JLabel("Mana : " + myMana + "/100", JLabel.LEFT);
 
-                //p3.setLayout(new GridLayout(2 ,2));
+                p3.setLayout(new GridLayout(3 ,2));
          //Position A
          JButton bA = new JButton("Attack");
-        
          if(this.iA.getName().equals("Berry")){
              itA = new JLabel(iA.getName(), iconberry, JLabel.LEFT );
          }
          else if(this.iA.getName().equals("Potion")){
              itA = new JLabel(iA.getName(), potion, JLabel.LEFT );
          }
+         else if(this.iA.getName().equals("Super potion")){
+            itA = new JLabel(iA.getName(), superpotion, JLabel.LEFT );
+        }
+        else if(this.iA.getName().equals("Upgrade")){
+            itA = new JLabel(iA.getName(), item4, JLabel.LEFT );
+        }
          else if(iA.getName().equals("Dragon Scale")){
             itA = new JLabel(iA.getName(), item5, JLabel.LEFT );
          }
