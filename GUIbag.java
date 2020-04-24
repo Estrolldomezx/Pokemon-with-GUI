@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 //import sun.jvm.hotspot.types.JByteField;
 import java.awt.*;
@@ -64,18 +63,16 @@ public class GUIbag extends JFrame{
         ImageIcon imgbtfIcon = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconFIGHT.PNG");
         ImageIcon imgiemt = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\imgiemt.PNG");
         ImageIcon imgMana = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconMANA.PNG");
-
+        
         JPanel p = new JPanel();
         p.setLayout(new BorderLayout());
-
-        JButton test = new JButton("test");
-        p.add(test);
+       
         int i; //n
         i = berry + potion + superpotion + item4 + item5 + item6 + item7 + item8 + item9 + item10;
-        // pn
         JPanel pn = new JPanel();
-        JLabel ds = new JLabel("All items : " + i, imgiemt, JLabel.CENTER);
 
+
+        JLabel ds = new JLabel("All items : " + i, imgiemt, JLabel.CENTER);
         ds.setFont(new Font("Eras Demi ITC", Font.BOLD, 15));
 
         pn.add(ds);
@@ -121,7 +118,6 @@ public class GUIbag extends JFrame{
 
         JLabel use = new JLabel("REDEEM", JLabel.CENTER);
         use.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
-
         JButton berryButton = new JButton(allitems.item1.getName()+" (" + berry + ")",imgBerry);
         JButton potionButton = new JButton(allitems.item2.getName()+" (" + potion + ")",imgPotion);
         JButton superpotionButton = new JButton(allitems.item3.getName()+" (" + superpotion + ")",imgsuperpotion);
@@ -192,7 +188,7 @@ public class GUIbag extends JFrame{
         p.add(p1, BorderLayout.WEST);
         p.add(p2, BorderLayout.EAST);
         p.add(p3, BorderLayout.CENTER);
-
+        add(p);
         //event & handle
         berryButton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent eata){
@@ -289,7 +285,26 @@ public class GUIbag extends JFrame{
 
            
             }
-        });      
+        });     
+        item4Button.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent eata){
+                ds.setText("Have sold the item: "+allitems.item4.getName()+"    Pokeball : +10  ");
+                ds.setIcon(imgitem4);
+                    ppokeball += 10;
+
+                int i = bag.findItem("Dragon Scale");
+              
+                bag.removeItem(i); 
+                item4 = bag.countItem("Dragon Scale");
+                
+                if(item4 <=0)
+                    item5Button.setEnabled(false);
+
+                item4Button.setText(allitems.item4.getName()+" ("+ item4 +")");
+                mn.setText("Pokeball : "+ppokeball);
+           
+            }
+        }); 
         item5Button.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent eata){
                 ds.setText("Have sold the item: "+allitems.item5.getName()+"    Pokeball : +20  ");
@@ -408,18 +423,11 @@ public class GUIbag extends JFrame{
         });
 
 
-
-
-
-
-
-
-
         back.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent eata){
                 setVisible(false);
                 fb = new Base(base.getName(), base.getBaseSkill(), base.getDamage(), php, pexp, ppokeball, pmana, parmor,plevel,countMon);
-                new GUIstage(fb,bag);
+                new GUIstage2(fb,bag);
 
            
             }
