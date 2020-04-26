@@ -400,7 +400,7 @@ toBag.addActionListener(new ActionListener(){
     public void actionPerformed(ActionEvent eatc){
         setVisible(false);
         BBS = new Base(Pokemons.getName(), Pokemons.getBaseSkill(), Pokemons.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
-        //new GUIbag(BBS, bag);
+        new GUIbag(BBS, bag);
 
 
                         
@@ -414,24 +414,25 @@ toShop.addActionListener(new ActionListener(){
         //new GUIbag(BBS, bag);
         if(Pokemons.getName().equals("Bulbasaur")){   //all +s
             //pxnv = new JLabel("", newbbs, JLabel.CENTER);
-            //pxnv.setText("text");
-            pxnv.setIcon(iconBBS2);
+            
+            //pxnv.setText("Bulbasaur2");
+            //Pokemons.getName().equals("Bulbasaur2");
             new GUIstage2(Pokemons, bag);
 
         }
         else if(Pokemons.getName().equals("Charmander")){
             //pxnv = new JLabel("", newcmd, JLabel.CENTER);
-            pxnv.setIcon(iconCMD2);
+            Pokemons.getName().equals("Charmander2");
             new GUIstage2(Pokemons, bag);
         }       
         else if(Pokemons.getName().equals("Squirtle")){
             //pxnv = new JLabel("", newsqt, JLabel.CENTER);
-            pxnv.setIcon(iconSQT2);
+            Pokemons.getName().equals("Squirtle2");
             new GUIstage2(Pokemons, bag);
         }         
         else if(Pokemons.getName().equals("Pikachu")){
             //pxnv = new JLabel("", newpkc, JLabel.CENTER);
-            pxnv.setIcon(iconPKC2);
+            Pokemons.getName().equals("Pikachu2");
             new GUIstage2(Pokemons, bag);
         } 
                         
