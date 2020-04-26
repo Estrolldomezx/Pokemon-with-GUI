@@ -13,15 +13,22 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class GUIstart extends JFrame{
-    private int count = 0;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L; //push
+
+    // private int count = 0;
     public GUIstart(){
         JLabel Background;
-        JButton button1 = new JButton("Click to play");
+        JButton button1 = new JButton("Become a Pokemon trainer");
         button1.setFont(new Font("Eras Demi ITC", Font.BOLD, 20));
-        ImageIcon img = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\icon12.JPG");
+        ImageIcon img = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\menu.JPG");
         Background = new JLabel("", img, JLabel.CENTER );
         Background.setLayout(null);
-        button1.setBounds(300,475,200,35);
+        button1.setBounds(238,360,326,50);
+        button1.setBackground(new Color(255, 215, 0));
+        button1.setForeground(new Color(178, 34, 34));
         Background.setBounds(0,0,800,600);
         Background.add(button1);
         add(Background);
@@ -36,4 +43,5 @@ public class GUIstart extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }
+    
 }
