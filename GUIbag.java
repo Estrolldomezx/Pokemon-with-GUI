@@ -18,6 +18,7 @@ public class GUIbag extends JFrame{
     private int item10;
 
     private int php;
+    private int pmaxhp;
     private int parmor;
     private int pexp;
     private int plevel;
@@ -40,7 +41,8 @@ public class GUIbag extends JFrame{
         this.item9 = bag.countItem("Sun Stone");
         this.item10 = bag.countItem("Unova Stone");
 
-        this.php = base.getHP();
+        this.php = base.getHP(); //getHP
+        this.pmaxhp = base.MaxCharHP();
         this.parmor = base.getDEF();
         this.pexp = base.getEXP();
         this.plevel = base.getLevel();
@@ -95,7 +97,7 @@ public class GUIbag extends JFrame{
         mn.setFont(new Font("Cambria Math", Font.BOLD, 12));
         mn.setOpaque(true);
 
-        JLabel hp = new JLabel("HP: " + php + " / " + base.MaxCharHP , imgHP, JLabel.CENTER);
+        JLabel hp = new JLabel("HP: " + php + " / " + pmaxhp , imgHP, JLabel.CENTER); //php
         hp.setFont(new Font("Cambria Math", Font.BOLD, 12));
         hp.setOpaque(true);
         
@@ -193,7 +195,7 @@ public class GUIbag extends JFrame{
         berryButton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent eata){
                 
-                ds.setText("Have used the item: "+allitems.item1.getName()+"    Heal: +"+allitems.item1.getHeal()+"    Mana: +"+allitems.item1.getMana());
+                ds.setText("Have used the item: "+allitems.item1.getName()+"    Health : +"+allitems.item1.getHeal()+"    Mana: +"+allitems.item1.getMana());
                 ds.setIcon(imgBerry);
                     php += allitems.item1.getHeal();
                     
