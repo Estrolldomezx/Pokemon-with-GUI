@@ -14,8 +14,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout.Constraints;
+import javax.swing.plaf.ColorUIResource;
 
-import jdk.internal.org.jline.utils.Colors;
 
 public class Pokename extends JFrame{
     JTextField nametext;
@@ -33,33 +33,24 @@ public class Pokename extends JFrame{
 
         JLabel nameLabel = new JLabel("Enter Your Buddy Name");
         nameLabel.setFont(new Font("Eras Demi ITC", Font.BOLD, 16));
+        nameLabel.setForeground(new Color(16, 78, 139));
         JTextField nametext = new JTextField(20);
         nametext.setFont(new Font("Eras Demi ITC", Font.BOLD, 15));
         JButton setNameButton = new JButton(" SUBMIT ");
         setNameButton.setFont(new Font("Eras Demi ITC", Font.BOLD, 14));
+        setNameButton.setBackground(new Color(16, 78, 139));
+        setNameButton.setForeground(new Color(255, 255, 255));
         p1.add(logo);
         //p1.add(nullLabel);
         p1.add(nameLabel);
         p1.add(nametext);
         p1.add(setNameButton);
         p1.setLayout(new FlowLayout());
-        p1.setBackground(new Color(255, 215, 0));
         container.add(p1);
+        p1.setBackground(new ColorUIResource(30, 144, 255) );
 
         //p2
-/*        JPanel p2 = new JPanel();
-        p2.setLayout(new FlowLayout());
-        JLabel nameLabel = new JLabel("Enter Your Name");
-        p2.add(nameLabel);
-        JTextField nametext = new JTextField(25);
-        p2.add(nametext);
-        JButton setNameButton = new JButton("Submit your buddy name");
-        p2.add(setNameButton);
-        p2.setBounds(0, 250, 500, 250);
 
-        container.add(p1);
-        container.add(p2);
-*/        
         setNameButton.addActionListener(new ActionListener(){
         
             @Override
