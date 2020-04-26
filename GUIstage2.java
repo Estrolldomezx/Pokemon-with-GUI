@@ -92,12 +92,16 @@ public class GUIstage2 extends JFrame{
         //icon pokemon
         ImageIcon iconbbs = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBBS.GIF");
         ImageIcon newbbs = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stageBBS2.GIF");
+        ImageIcon iconBBS2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconBBS2.GIF");
         ImageIcon iconcmd = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconCMD.GIF");
         ImageIcon newcmd = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\test.GIF");
+        ImageIcon iconCMD2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconCMD2.GIF");
         ImageIcon iconsqt = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSQT1.GIF");
         ImageIcon newsqt = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stageSQT.GIF");
+        ImageIcon iconSQT2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconSQT2.GIF");
         ImageIcon iconpkc = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPKC.GIF");
         ImageIcon newpkc = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stagePKC.GIF");
+        ImageIcon iconPKC2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconPKC2.GIF");
         
         //iconEnemy
         ImageIcon iconsnorlax = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconNORLAX.GIF");
@@ -171,6 +175,18 @@ public class GUIstage2 extends JFrame{
                 }         
                 else if(Pokemons.getName().equals("Pikachu")){
                     pxnv = new JLabel("", newpkc, JLabel.CENTER);
+                } 
+                else if(Pokemons.getName().equals("Bulbasaur2")){
+                    pxnv = new JLabel("", iconBBS2, JLabel.CENTER);
+                } 
+                else if(Pokemons.getName().equals("Charmander2")){
+                    pxnv = new JLabel("", iconCMD2, JLabel.CENTER);
+                } 
+                else if(Pokemons.getName().equals("Squirtle2")){
+                    pxnv = new JLabel("", iconSQT2, JLabel.CENTER);
+                } 
+                else if(Pokemons.getName().equals("Pikachu2")){
+                    pxnv = new JLabel("", iconPKC2, JLabel.CENTER);
                 } 
 
                 JButton skb = new JButton("Skill : " + skills.getName());
@@ -384,7 +400,9 @@ toBag.addActionListener(new ActionListener(){
     public void actionPerformed(ActionEvent eatc){
         setVisible(false);
         BBS = new Base(Pokemons.getName(), Pokemons.getBaseSkill(), Pokemons.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
-        new GUIbag(BBS, bag);
+        //new GUIbag(BBS, bag);
+
+
                         
     }
 });
@@ -393,7 +411,29 @@ toShop.addActionListener(new ActionListener(){
     public void actionPerformed(ActionEvent eatc){
         setVisible(false);
         BBS = new Base(Pokemons.getName(), Pokemons.getBaseSkill(), Pokemons.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
-        new GUIbag(BBS, bag);
+        //new GUIbag(BBS, bag);
+        if(Pokemons.getName().equals("Bulbasaur")){   //all +s
+            //pxnv = new JLabel("", newbbs, JLabel.CENTER);
+            //pxnv.setText("text");
+            pxnv.setIcon(iconBBS2);
+            new GUIstage2(Pokemons, bag);
+
+        }
+        else if(Pokemons.getName().equals("Charmander")){
+            //pxnv = new JLabel("", newcmd, JLabel.CENTER);
+            pxnv.setIcon(iconCMD2);
+            new GUIstage2(Pokemons, bag);
+        }       
+        else if(Pokemons.getName().equals("Squirtle")){
+            //pxnv = new JLabel("", newsqt, JLabel.CENTER);
+            pxnv.setIcon(iconSQT2);
+            new GUIstage2(Pokemons, bag);
+        }         
+        else if(Pokemons.getName().equals("Pikachu")){
+            //pxnv = new JLabel("", newpkc, JLabel.CENTER);
+            pxnv.setIcon(iconPKC2);
+            new GUIstage2(Pokemons, bag);
+        } 
                         
     }
 });
