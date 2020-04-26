@@ -133,27 +133,29 @@ public class GUIstage2 extends JFrame{
         //Background = new JLabel("", stage, JLabel.CENTER);
                 //top
                 JPanel p1 = new JPanel();
-                p1.setLayout(new GridLayout(1,6));
+                p1.setLayout(new GridLayout(1,5));
                 //  p1.setBackground(Color.darkGray);
                 
                 JLabel imgPK = new JLabel("Name : " + Pokemons.getName(), iconpk, JLabel.LEFT); //+s
                 imgPK.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
                 JLabel imgEXP = new JLabel("EXP : " + myEXP, iconexp, JLabel.LEFT);
                 imgEXP.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
-               // JLabel imgEXP = new JLabel("EXP : " + myEXP, iconexp, JLabel.LEFT);
-               // imgEXP.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
+                JLabel imgHP = new JLabel("HP : " + myHP + "/100", iconHP, JLabel.CENTER);
+                imgHP.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
                 JLabel imgLEVEL = new JLabel("Level : " + myLevel, iconlv, JLabel.LEFT);
                 imgLEVEL.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
                 JLabel imgFight = new JLabel("Win : " + countMon, iconfight, JLabel.LEFT);
                 imgFight.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
-                JLabel imgPokeball = new JLabel("Pokeball : " + myPokeball, iconpokeball, JLabel.LEFT);
-                imgPokeball.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
+        
+               // JLabel imgPokeball = new JLabel("Pokeball : " + myPokeball, iconpokeball, JLabel.LEFT);
+               // imgPokeball.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
                 
                 p1.add(imgPK);
                 p1.add(imgEXP);
+                p1.add(imgHP);
                 p1.add(imgLEVEL);
                 p1.add(imgFight);
-                p1.add(imgPokeball);
+               // p1.add(imgPokeball);
                 
                 p.add(p1,BorderLayout.NORTH);
                 
