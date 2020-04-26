@@ -28,9 +28,13 @@ public class GUIstage2 extends JFrame{
     private UseSkills allskill = new UseSkills();
     private Skills skills;
     private Base BBS;
+    private Base BBS2;
     private Base CMD;
+    private Base CMD2;
     private Base SQT;
+    private Base SQT2;
     private Base  PKC;
+    private Base  PKC2;
     private JLabel pxnv;
     private JLabel pA;
     private JLabel pB;
@@ -38,16 +42,17 @@ public class GUIstage2 extends JFrame{
     private JLabel itA;
     private JLabel itB;
     private JLabel itC;
-    private  int myHP;
+
+    private  int myHP; //php
     private int myDEF;
     private int myEXP;
     private int myLevel;
     private int myMana = 0;
     private int myPokeball;
     private int countMon;           //
-    private int mahp;                 //
-    private int mbhp;
-    private int mchp;  //edit float to int
+    private int mahp = 100;                 //
+   // private int mbhp;
+   // private int mchp;  //edit float to int
     private int dca = 0;             //
     private int dcb = 0;
     private int dcc = 0;
@@ -61,9 +66,8 @@ public class GUIstage2 extends JFrame{
         this.myMana = Pokemons.getMana();
         this.myPokeball = Pokemons.getPokeball();
         this.countMon = Pokemons.getKillmon();
-        this.mahp = mA.CharHP;
-        //this.mbhp = mB.CharHP;
         //this.mahp = mA.CharHP;
+        this.mahp = 100;
         //skill
         if(Pokemons.getBaseSkill().equals("Solar beam"))
             skills = allskill.getBBSSkill();
@@ -83,6 +87,7 @@ public class GUIstage2 extends JFrame{
         ImageIcon iconpk = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconJB.PNG");
         ImageIcon iconlv = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconLV.PNG");
         ImageIcon iconexp = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconEXP.PNG");
+        ImageIcon iconHP = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconHP.PNG");
         ImageIcon iconfight = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconFIGHT.PNG");
         ImageIcon iconpokeball = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPOKEBALL.PNG");
         ImageIcon iconbag = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBAG2.PNG");
@@ -136,26 +141,25 @@ public class GUIstage2 extends JFrame{
                 p1.setLayout(new GridLayout(1,5));
                 //  p1.setBackground(Color.darkGray);
                 
-                JLabel imgPK = new JLabel("Name : " + Pokemons.getName(), iconpk, JLabel.LEFT); //+s
+                JLabel imgPK = new JLabel("Name : " + Pokemons.getName(), iconpk, JLabel.CENTER);
                 imgPK.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
-                JLabel imgEXP = new JLabel("EXP : " + myEXP, iconexp, JLabel.LEFT);
+                JLabel imgEXP = new JLabel("EXP : " + myEXP, iconexp, JLabel.CENTER);
                 imgEXP.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
                 JLabel imgHP = new JLabel("HP : " + myHP + "/100", iconHP, JLabel.CENTER);
                 imgHP.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
-                JLabel imgLEVEL = new JLabel("Level : " + myLevel, iconlv, JLabel.LEFT);
+                JLabel imgLEVEL = new JLabel("Level : " + myLevel, iconlv, JLabel.CENTER);
                 imgLEVEL.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
-                JLabel imgFight = new JLabel("Win : " + countMon, iconfight, JLabel.LEFT);
+                JLabel imgFight = new JLabel("Win : " + countMon, iconfight, JLabel.CENTER);
                 imgFight.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
-        
-               // JLabel imgPokeball = new JLabel("Pokeball : " + myPokeball, iconpokeball, JLabel.LEFT);
-               // imgPokeball.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
+ //               JLabel imgPokeball = new JLabel("Pokeball : " + myPokeball, iconpokeball, JLabel.CENTER);
+ //               imgPokeball.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
                 
                 p1.add(imgPK);
                 p1.add(imgEXP);
                 p1.add(imgHP);
                 p1.add(imgLEVEL);
                 p1.add(imgFight);
-               // p1.add(imgPokeball);
+                //p1.add(imgPokeball);
                 
                 p.add(p1,BorderLayout.NORTH);
                 
@@ -233,28 +237,28 @@ public class GUIstage2 extends JFrame{
 
  
          if(mA.getName().equals("Snorlax")){
-             pA = new JLabel(mA.getName() + "/ HP: " + myHP, iconsnorlax, JLabel.LEFT);
+             pA = new JLabel(mA.getName() + "/ HP: " + mahp, iconsnorlax, JLabel.LEFT);
          }
          else if(mA.getName().equals("Lapras")){
-             pA = new JLabel(mA.getName()+"/ HP: " + myHP, iconlapras, JLabel.LEFT);
+             pA = new JLabel(mA.getName()+"/ HP: " + mahp, iconlapras, JLabel.LEFT);
          }       
          else if(mA.getName().equals("Darkrai")){
-             pA = new JLabel(mA.getName()+"/ HP: " + myHP, icondarkrai, JLabel.LEFT);
+             pA = new JLabel(mA.getName()+"/ HP: " + mahp, icondarkrai, JLabel.LEFT);
          }
          else if(mA.getName().equals("Gyarados")){
-             pA = new JLabel(mA.getName()+"/ HP: " + myHP, icongyarados, JLabel.LEFT);
+             pA = new JLabel(mA.getName()+"/ HP: " + mahp, icongyarados, JLabel.LEFT);
          }
          else if(mA.getName().equals("Lugia")){
-             pA = new JLabel(mA.getName()+"/ HP: " + myHP, iconlugia, JLabel.LEFT);
+             pA = new JLabel(mA.getName()+"/ HP: " + mahp, iconlugia, JLabel.LEFT);
          }
          else if(mA.getName().equals("Giratina")){
-             pA = new JLabel(mA.getName()+"/ HP: " + myHP, icongiratina, JLabel.LEFT);
+             pA = new JLabel(mA.getName()+"/ HP: " + mahp, icongiratina, JLabel.LEFT);
          }
          else if(mA.getName().equals("Dialga")){
-             pA = new JLabel(mA.getName()+"/ HP: " + myHP, icondialga, JLabel.LEFT);
+             pA = new JLabel(mA.getName()+"/ HP: " + mahp, icondialga, JLabel.LEFT);
          }
          else if(mA.getName().equals("Kyogre")){
-             pA = new JLabel(mA.getName()+"/ HP: " + myHP, iconkyogre, JLabel.LEFT);
+             pA = new JLabel(mA.getName()+"/ HP: " + mahp, iconkyogre, JLabel.LEFT);
          }
          
          JButton itAb = new JButton("Select ?");
@@ -328,13 +332,14 @@ bA.addActionListener(new ActionListener(){
         mahp -= Pokemons.getDamage();
         myEXP += 10;
         myMana += 10;
+        myHP -= mA.getMonsterDamage();
         
         if(myDEF > 0){
             myDEF -= mA.getMonsterDamage();
             myMana += Pokemons.getMana();
         }
         else if(myDEF <= 0){
-            myHP -= mA.getMonsterDamage();
+            //myHP -= mA.getMonsterDamage();
             myMana += Pokemons.getMana();                        
         }
         
@@ -342,8 +347,8 @@ bA.addActionListener(new ActionListener(){
         if(myHP <= 0){
             myHP  = 0;
         }
-        else if(myHP >= Pokemons.getHP()){
-            myHP += Pokemons.getMana();
+        else if(myHP >= Pokemons.MaxCharHP()){
+            myHP += Pokemons.MaxCharHP();
         }
         
         if(myDEF <= 0){
@@ -365,17 +370,27 @@ bA.addActionListener(new ActionListener(){
         else if(myMana >= 100){
             myMana = 100;
         }
-        if(myMana >= skills.getMana()){
+        if(myMana >= skills.getMana()-50){
             skb.setEnabled(true);
         }
-     
-        namehp.setText("HP: " + myHP + "/" + Pokemons.getHP());
+        if(mahp <= 0){
+            countMon++;
+            mahp = 0;
+         }
+        else if(mahp >= 100){
+            mahp = 100;
+        }
+        //JLabel imgHP = new JLabel("HP : " + myHP + "/100", iconHP, JLabel.CENTER);
+        //imgHP.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
+        imgHP.setText("HP : " + myHP + "/" + Pokemons.MaxCharHP);
+
+        namehp.setText("HP: " + myHP + "/" + Pokemons.MaxCharHP());
         def.setText("Def: " + myDEF + "/" + Pokemons.getDEF());
         mana.setText("Mana: " + myMana + "/100");
         imgEXP.setText("EXP: " + myEXP);
         imgLEVEL.setText("Level: " + myLevel);
         imgFight.setText("Win: " + countMon);
-        pA.setText(mA.getName()+"/ HP: "+mahp);
+        pA.setText(mA.getName()+"/ HP: "+ mahp);
 //                pB.setText(mB.getName()+"/ HP: "+mbhp);
 //                pC.setText(mC.getName()+"/ HP: "+mchp);
         
@@ -402,6 +417,7 @@ toBag.addActionListener(new ActionListener(){
     public void actionPerformed(ActionEvent eatc){
         setVisible(false);
         BBS = new Base(Pokemons.getName(), Pokemons.getBaseSkill(), Pokemons.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
+        mahp = 100;
         new GUIbag(BBS, bag);
 
 
@@ -412,16 +428,18 @@ toBag.addActionListener(new ActionListener(){
 toShop.addActionListener(new ActionListener(){
     public void actionPerformed(ActionEvent eatc){
         setVisible(false);
-        BBS = new Base(Pokemons.getName(), Pokemons.getBaseSkill(), Pokemons.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
+        //BBS = new Base(Pokemons.getName(), Pokemons.getBaseSkill(), Pokemons.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
         //new GUIbag(BBS, bag);
-        if(Pokemons.getName().equals("Bulbasaur")){   //all +s
-            //pxnv = new JLabel("", newbbs, JLabel.CENTER);
-            
+       if(Pokemons.getName().equals("Bulbasaur")){   //all +s
+            //pxnv = new JLabel("", iconBBS2, JLabel.CENTER);
+            pxnv.equals("Bulbasaur2");
             //pxnv.setText("Bulbasaur2");
-            //Pokemons.getName().equals("Bulbasaur2");
+            //Pokemons.getName().format("Bulbasaur2", equals("Bulbasaur"));
+            //pxnv.getName().equals("Bulbasaur2");
+            //Pokemons.getName().equalsIgnoreCase("Bulbasaur2");
             new GUIstage2(Pokemons, bag);
-
         }
+        
         else if(Pokemons.getName().equals("Charmander")){
             //pxnv = new JLabel("", newcmd, JLabel.CENTER);
             Pokemons.getName().equals("Charmander2");
@@ -436,8 +454,7 @@ toShop.addActionListener(new ActionListener(){
             //pxnv = new JLabel("", newpkc, JLabel.CENTER);
             Pokemons.getName().equals("Pikachu2");
             new GUIstage2(Pokemons, bag);
-        } 
-                        
+        }                      
     }
 });
 
@@ -490,8 +507,8 @@ skb.addActionListener(new ActionListener(){
         myEXP += 25;
         
         mahp -= skills.getDamage();
-        mbhp -= skills.getDamage();
-        mchp -= skills.getDamage();
+       // mbhp -= skills.getDamage();
+       // mchp -= skills.getDamage();
         
         //check
         if(myHP <= 0){
@@ -539,37 +556,9 @@ skb.addActionListener(new ActionListener(){
                  
                 //mahp = 0;
         }
-        else if(mahp >= mA.getHP())
+        else if(mahp >= mA.getHP()){
             mahp = mA.getHP();
-        
- /*       if(mbhp <= 0){
-                
-                pB.setEnabled(false);
-//                        bB.setEnabled(false); 
-                if(dcb==0){
-//                          itBb.setVisible(true);
-                   itB.setVisible(true);
-                   countMon++;
-                   dcb++;
-                }
-                mbhp = 0;}
-            else if(mbhp >= mB.getHP())
-                mbhp = mB.getHP();
-        
-        if(mchp <= 0){
-                
-                pC.setEnabled(false);
-//                        bC.setEnabled(false); 
-                if(dcc==0){
-//                           itCb.setVisible(true);
-                   itC.setVisible(true);
-                   countMon++;
-                   dcc++;
-                }
-                mchp = 0;}
-            else if(mchp >= mC.getHP())
-                mchp = mC.getHP();
- */       
+        }
         //update
         //p.setBackground(Color.BLACK);
         namehp.setText("HP: " + myHP + "/" + Pokemons.getHP());
@@ -581,18 +570,19 @@ skb.addActionListener(new ActionListener(){
         pA.setText(mA.getName()+"/ HP: "+mahp);
         //pB.setText(mB.getName()+"/ HP: "+mbhp);
         //pC.setText(mC.getName()+"/ HP: "+mchp);    
-    }
+        }
+
 });    
         
 //p.setBackground(stage);        
    
-setSize(1020,676);
-setResizable(false);
-setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-setVisible(true);
-}
+    setSize(1020,676);
+    setResizable(false);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setVisible(true);
+    
 
-
+    }
 
 }    
         
