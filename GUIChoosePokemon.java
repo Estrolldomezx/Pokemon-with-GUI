@@ -27,10 +27,10 @@ public class GUIChoosePokemon extends JFrame{
     private Mons1  SQT = getPokemons.getSQT();
     private Mons1  PKC = getPokemons.getPKC();
     
-    private Base  BS = new Base(BBS.getJName(), BBS.getJSkill(),14,130,0,0,0,0,0,0);
-    private Base  MD = new Base(CMD.getJName(), CMD.getJSkill(),15,145,0,0,0,0,0,0);
-    private Base  QT = new Base(SQT.getJName(), SQT.getJSkill(),10,140,0,0,0,0,0,0);
-    private Base  KC = new Base(PKC.getJName(), PKC.getJSkill(),13,150,0,0,0,0,0,0);
+    private Base  BS = new Base(BBS.getJName(), BBS.getJSkill(),12,100,0,0,0,0,0,0);
+    private Base  MD = new Base(CMD.getJName(), CMD.getJSkill(),14,100,0,0,0,0,0,0);
+    private Base  QT = new Base(SQT.getJName(), SQT.getJSkill(),11,100,0,0,0,0,0,0);
+    private Base  KC = new Base(PKC.getJName(), PKC.getJSkill(),13,100,0,0,0,0,0,0);
     
     private int checkPokemon = 0;
     
