@@ -11,14 +11,14 @@ import java.util.Random;
  */
 public class SendMons {
     private ArrayList<Monster> Allpokemon; // edit Item -> Monster
-    public Monster mon1 = new Monster("Snorlax", 60, 7);
-    public Monster mon2 = new Monster("Lapras",70,8);
-    public Monster mon3 = new Monster("Darkrai",80,9);
-    public Monster mon4 = new Monster("Gyarados",90,10);
+    public Monster mon1 = new Monster("Snorlax", 100, 7);
+    public Monster mon2 = new Monster("Lapras",100,8);
+    public Monster mon3 = new Monster("Darkrai",100,9);
+    public Monster mon4 = new Monster("Gyarados",100,10);
     public Monster mon5 = new Monster("Lugia",100,11);
-    public Monster mon6 = new Monster("Giratina",110,12);
-    public Monster mon7 = new Monster("Dialga",120,13);
-    public Monster mon8 = new Monster("Kyogre",130,14);
+    public Monster mon6 = new Monster("Giratina",100,12);
+    public Monster mon7 = new Monster("Dialga",100,13);
+    public Monster mon8 = new Monster("Kyogre",100,14);
     
     Random rand = new Random();
     
