@@ -19,14 +19,14 @@ public class AllPokemons {
     private Mons1 p44;
   
     public AllPokemons(){
-        this.p1 = new Mons1("Bulbasaur","Solar beam",130);
-        this.p11 = new Mons1("Bulbasaur2","Solar beam",150);
-        this.p2 = new Mons1("Charmander","Fire blast",145);
-        this.p22 = new Mons1("Charmander2","Fire blast",165);
-        this.p3 = new Mons1("Squirtle","Hydro pump",140);
-        this.p33 = new Mons1("Squirtle2","Hydro pump",160);
-        this.p4 = new Mons1("Pikachu","Thunder bolt",150);
-        this.p44 = new Mons1("Pikachu2","Thunder bolt",170);
+        this.p1 = new Mons1("Bulbasaur","Solar beam",100);
+        this.p11 = new Mons1("Bulbasaur2","Solar beam",100);
+        this.p2 = new Mons1("Charmander","Fire blast",100);
+        this.p22 = new Mons1("Charmander2","Fire blast",100);
+        this.p3 = new Mons1("Squirtle","Hydro pump",100);
+        this.p33 = new Mons1("Squirtle2","Hydro pump",100);
+        this.p4 = new Mons1("Pikachu","Thunder bolt",100);
+        this.p44 = new Mons1("Pikachu2","Thunder bolt",100);
     } 
     public Mons1 getBBS(){
         return p1;
