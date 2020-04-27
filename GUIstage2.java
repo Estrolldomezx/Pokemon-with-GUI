@@ -57,7 +57,7 @@ public class GUIstage2 extends JFrame{
     private int dcb = 0;
     private int dcc = 0;
     
-    public GUIstage2(Base Pokemons, Bag bag){
+    public GUIstage2(Base Pokemons, Bag bag, String namePokemon){
         super("Battle Stage");
         this.myHP = Pokemons.getHP();
         this.myDEF = Pokemons.getDEF();
@@ -97,16 +97,25 @@ public class GUIstage2 extends JFrame{
         //icon pokemon
         ImageIcon iconbbs = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBBS.GIF");
         ImageIcon newbbs = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stageBBS2.GIF");
+        //stage
         ImageIcon iconBBS2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconBBS2.GIF");
+        //upgrade2
+        ImageIcon newbbs2 = new ImageIcon("img\\stageBBS3.GIF");
+
         ImageIcon iconcmd = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconCMD.GIF");
         ImageIcon newcmd = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\test.GIF");
-        ImageIcon iconCMD2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconCMD2.GIF");
+        //upgrade2
+        ImageIcon newcmd2 = new ImageIcon("img\\stageCMD2.GIF");
+
         ImageIcon iconsqt = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSQT1.GIF");
         ImageIcon newsqt = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stageSQT.GIF");
-        ImageIcon iconSQT2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconSQT2.GIF");
+        //upgrade2
+        ImageIcon newsqt2 = new ImageIcon("img\\stageSQT2.GIF");
+
         ImageIcon iconpkc = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPKC.GIF");
         ImageIcon newpkc = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stagePKC.GIF");
-        ImageIcon iconPKC2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconPKC2.GIF");
+        //upgrade2
+        ImageIcon newpkc2 = new ImageIcon("img\\stagePKC2.GIF");
         
         //iconEnemy
         ImageIcon iconsnorlax = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconNORLAX.GIF");
@@ -141,7 +150,7 @@ public class GUIstage2 extends JFrame{
                 p1.setLayout(new GridLayout(1,5));
                 //  p1.setBackground(Color.darkGray);
                 
-                JLabel imgPK = new JLabel("Name : " + Pokemons.getName(), iconpk, JLabel.CENTER);
+                JLabel imgPK = new JLabel("Name : " + namePokemon, iconpk, JLabel.CENTER); //Pokemons.getName()
                 imgPK.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
                 JLabel imgEXP = new JLabel("EXP : " + myEXP, iconexp, JLabel.CENTER);
                 imgEXP.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
@@ -173,29 +182,30 @@ public class GUIstage2 extends JFrame{
                 if(Pokemons.getName().equals("Bulbasaur")){   //all +s
                     pxnv = new JLabel("", newbbs, JLabel.CENTER);
                 }
+                else if(Pokemons.getName().equals("Bulbasaur2")){
+                    pxnv = new JLabel("", newbbs2, JLabel.CENTER);
+                } 
                 else if(Pokemons.getName().equals("Charmander")){
                     pxnv = new JLabel("", newcmd, JLabel.CENTER);
                 }       
+                else if(Pokemons.getName().equals("Charmander2")){
+                    pxnv = new JLabel("", newcmd2, JLabel.CENTER);
+                } 
                 else if(Pokemons.getName().equals("Squirtle")){
                     pxnv = new JLabel("", newsqt, JLabel.CENTER);
-                }         
+                } 
+                else if(Pokemons.getName().equals("Squirtle2")){
+                    pxnv = new JLabel("", newsqt2, JLabel.CENTER);
+                }          
                 else if(Pokemons.getName().equals("Pikachu")){
                     pxnv = new JLabel("", newpkc, JLabel.CENTER);
                 } 
-                else if(Pokemons.getName().equals("Bulbasaur2")){
-                    pxnv = new JLabel("", iconBBS2, JLabel.CENTER);
-                } 
-                else if(Pokemons.getName().equals("Charmander2")){
-                    pxnv = new JLabel("", iconCMD2, JLabel.CENTER);
-                } 
-                else if(Pokemons.getName().equals("Squirtle2")){
-                    pxnv = new JLabel("", iconSQT2, JLabel.CENTER);
-                } 
                 else if(Pokemons.getName().equals("Pikachu2")){
-                    pxnv = new JLabel("", iconPKC2, JLabel.CENTER);
+                    pxnv = new JLabel("", newpkc2, JLabel.CENTER);
                 } 
 
                 JButton skb = new JButton("Skill : " + skills.getName());
+                skb.setFont(new Font("Eras Demi ITC", Font.BOLD, 23));
                 skb.setEnabled(false);
                 JLabel namehp = new JLabel("HP : " + myHP + "/" + Pokemons.getHP(), JLabel.LEFT);
                 JLabel def = new JLabel("Def : " + myDEF + "/100", JLabel.LEFT);
@@ -204,6 +214,7 @@ public class GUIstage2 extends JFrame{
                 p3.setLayout(new GridLayout(3 ,2));
          //Position A
          JButton bA = new JButton("Attack");
+         bA.setFont(new Font("Eras Demi ITC", Font.BOLD, 23));
          if(this.iA.getName().equals("Berry")){
              itA = new JLabel(iA.getName(), iconberry, JLabel.LEFT );
          }
@@ -262,6 +273,7 @@ public class GUIstage2 extends JFrame{
          }
          
          JButton itAb = new JButton("Select ?");
+         itAb.setFont(new Font("Eras Demi ITC", Font.BOLD, 23));
          itA.setVisible(false);
          itAb.setVisible(false);
 
@@ -306,14 +318,17 @@ JPanel p2 = new JPanel();
 //*JPanel empty = new JPanel();
 p2.setLayout(new GridLayout(1,3));
 
-JButton toBag = new JButton("Bag", iconbag);
-JButton toShop = new JButton("Shop", iconshop);
-JButton toCharacter = new JButton("Next", iconnext);
+JButton toBag = new JButton("  Bag", iconbag);
+toBag.setFont(new Font("Eras Demi ITC", Font.BOLD, 23));
+JButton toStatus = new JButton("  Status", iconshop);
+toStatus.setFont(new Font("Eras Demi ITC", Font.BOLD, 23));
+JButton toCharacter = new JButton("  Next", iconnext);
+toCharacter.setFont(new Font("Eras Demi ITC", Font.BOLD, 23));
 toCharacter.setEnabled(false);
 
 
 p2.add(toBag);
-p2.add(toShop);
+p2.add(toStatus);
 p2.add(toCharacter);
 
 p.add(p2, BorderLayout.SOUTH);
@@ -418,49 +433,76 @@ toBag.addActionListener(new ActionListener(){
         setVisible(false);
         BBS = new Base(Pokemons.getName(), Pokemons.getBaseSkill(), Pokemons.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
         mahp = 100;
-        new GUIbag(BBS, bag);
+        new GUIbag(BBS, bag, namePokemon);
 
 
                         
     }
 });
 
-toShop.addActionListener(new ActionListener(){
+toStatus.addActionListener(new ActionListener(){
     public void actionPerformed(ActionEvent eatc){
         setVisible(false);
         //BBS = new Base(Pokemons.getName(), Pokemons.getBaseSkill(), Pokemons.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
         //new GUIbag(BBS, bag);
        if(Pokemons.getName().equals("Bulbasaur")){   //all +s
             //pxnv = new JLabel("", iconBBS2, JLabel.CENTER);
-            pxnv.equals("Bulbasaur2");
+            //pxnv.equals("Bulbasaur2");
             //pxnv.setText("Bulbasaur2");
             //Pokemons.getName().format("Bulbasaur2", equals("Bulbasaur"));
             //pxnv.getName().equals("Bulbasaur2");
             //Pokemons.getName().equalsIgnoreCase("Bulbasaur2");
-            new GUIstage2(Pokemons, bag);
+            new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
         }
         
         else if(Pokemons.getName().equals("Charmander")){
             //pxnv = new JLabel("", newcmd, JLabel.CENTER);
-            Pokemons.getName().equals("Charmander2");
-            new GUIstage2(Pokemons, bag);
+            //Pokemons.getName().equals("Charmander2");
+            new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
         }       
         else if(Pokemons.getName().equals("Squirtle")){
             //pxnv = new JLabel("", newsqt, JLabel.CENTER);
-            Pokemons.getName().equals("Squirtle2");
-            new GUIstage2(Pokemons, bag);
+            //Pokemons.getName().equals("Squirtle2");
+            new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
         }         
         else if(Pokemons.getName().equals("Pikachu")){
             //pxnv = new JLabel("", newpkc, JLabel.CENTER);
-            Pokemons.getName().equals("Pikachu2");
-            new GUIstage2(Pokemons, bag);
-        }                      
+            //Pokemons.getName().equals("Pikachu2");
+            new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
+        }    
+        // 2
+        if(Pokemons.getName().equals("Bulbasaur2")){   //all +s
+            //pxnv = new JLabel("", iconBBS2, JLabel.CENTER);
+            //pxnv.equals("Bulbasaur2");
+            //pxnv.setText("Bulbasaur2");
+            //Pokemons.getName().format("Bulbasaur2", equals("Bulbasaur"));
+            //pxnv.getName().equals("Bulbasaur2");
+            //Pokemons.getName().equalsIgnoreCase("Bulbasaur2");
+            new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
+        }
+        
+        else if(Pokemons.getName().equals("Charmander2")){
+            //pxnv = new JLabel("", newcmd, JLabel.CENTER);
+            //Pokemons.getName().equals("Charmander2");
+            new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
+        }       
+        else if(Pokemons.getName().equals("Squirtle2")){
+            //pxnv = new JLabel("", newsqt, JLabel.CENTER);
+            //Pokemons.getName().equals("Squirtle2");
+            new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
+        }         
+        else if(Pokemons.getName().equals("Pikachu2")){
+            //pxnv = new JLabel("", newpkc, JLabel.CENTER);
+            //Pokemons.getName().equals("Pikachu2");
+            new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
+        }  
+
     }
 });
 
 itAb.addActionListener(new ActionListener(){
     public void actionPerformed(ActionEvent eatc){
-         if(mahp==0)
+         if(mahp<=0)
            toCharacter.setEnabled(true);
         int n = JOptionPane.showConfirmDialog(null,"Select "+iA.getName()+" ?","selected",JOptionPane.YES_NO_OPTION);
         
@@ -478,7 +520,7 @@ skb.addActionListener(new ActionListener(){
           JOptionPane.showMessageDialog(null,"Skill: "+skills.getName()+" (Heal: "+skills.getheal()+" Damage: "+skills.getDamage()+")");
           p3.setBackground(Color.black);
           
-            if(mahp==0) // && mbhp==0 && mchp==0
+            if(mahp<=0) // && mbhp==0 && mchp==0
                 toCharacter.setEnabled(true);
     
         if(Pokemons.getName().equals("Bulbasaur")){
