@@ -40,10 +40,31 @@ public class GUIstatus extends JFrame{
         
         JLabel Border = new JLabel("", border, JLabel.CENTER);
         c.add(Border, BorderLayout.CENTER);
-        JLabel pic;
-        pic = new JLabel("", bs,JLabel.CENTER);
-        c.add(pic,BorderLayout.WEST);
-        pic.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0));
+        //JLabel pic;
+        if(Pokemons.getName().equals("Bulbasaur")){
+            JLabel pic = new JLabel("", bs,JLabel.CENTER);
+            c.add(pic, BorderLayout.WEST);
+            pic.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0));
+        }
+        else if(Pokemons.getName().equals("Charmander")){
+            JLabel pic = new JLabel("", md,JLabel.CENTER);
+            c.add(pic, BorderLayout.WEST);
+            pic.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0));
+        }
+        else if(Pokemons.getName().equals("Squirtle")){
+            JLabel pic = new JLabel("", qt,JLabel.CENTER);
+            c.add(pic, BorderLayout.WEST);
+            pic.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0));
+        }
+        else if(Pokemons.getName().equals("Pikachu")){
+            JLabel pic = new JLabel("", kc,JLabel.CENTER);
+            c.add(pic, BorderLayout.WEST);
+            pic.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0));
+        }
+
+        //pic = new JLabel("", bs,JLabel.CENTER);
+        //c.add(pic, BorderLayout.WEST);
+        //pic.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0));
         
         JPanel c1 = new JPanel();
         c1.setLayout(new GridLayout(8,1));
