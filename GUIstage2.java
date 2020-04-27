@@ -15,33 +15,30 @@ public class GUIstage2 extends JFrame{
 
     private SendMons allMon = new SendMons();
     private Monster mA = allMon.ShowMon();
-    private Monster mB = allMon.ShowMon();
-    private Monster mC = allMon.ShowMon();
-    
     private Allitems allitem = new Allitems();
-
     private Item iA = allitem.dropItem();
-    private Item iB = allitem.dropItem();
-    private Item iC = allitem.dropItem();
-
     
     private UseSkills allskill = new UseSkills();
     private Skills skills;
     private Base BBS;
     private Base BBS2;
+    private Base BBS3;
     private Base CMD;
     private Base CMD2;
+    private Base CMD3;
     private Base SQT;
     private Base SQT2;
+    private Base SQT3;
     private Base  PKC;
     private Base  PKC2;
+
     private JLabel pxnv;
     private JLabel pA;
-    private JLabel pB;
-    private JLabel pC;
+    //private JLabel pB;
+    //private JLabel pC;
     private JLabel itA;
-    private JLabel itB;
-    private JLabel itC;
+    //private JLabel itB;
+    //private JLabel itC;
 
     private  int myHP; //php
     private int myDEF;
@@ -101,16 +98,22 @@ public class GUIstage2 extends JFrame{
         ImageIcon iconBBS2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconBBS2.GIF");
         //upgrade2
         ImageIcon newbbs2 = new ImageIcon("img\\stageBBS3.GIF");
+        //upgrade3
+        ImageIcon newbbs3 = new ImageIcon("img\\stageBBS4.GIF"); //************** */
 
         ImageIcon iconcmd = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconCMD.GIF");
         ImageIcon newcmd = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\test.GIF");
         //upgrade2
         ImageIcon newcmd2 = new ImageIcon("img\\stageCMD2.GIF");
+        //upgrade3
+        ImageIcon newcmd3 = new ImageIcon("img\\stageCMD3.GIF"); //************* */
 
         ImageIcon iconsqt = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSQT1.GIF");
         ImageIcon newsqt = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stageSQT.GIF");
         //upgrade2
         ImageIcon newsqt2 = new ImageIcon("img\\stageSQT2.GIF");
+        //upgrade4
+        ImageIcon newsqt3 = new ImageIcon("img\\stageSQT3.GIF"); //************ */
 
         ImageIcon iconpkc = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPKC.GIF");
         ImageIcon newpkc = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stagePKC.GIF");
@@ -185,18 +188,27 @@ public class GUIstage2 extends JFrame{
                 else if(Pokemons.getName().equals("Bulbasaur2")){
                     pxnv = new JLabel("", newbbs2, JLabel.CENTER);
                 } 
+                else if(Pokemons.getName().equals("Bulbasaur3")){
+                    pxnv = new JLabel("", newbbs3, JLabel.CENTER);
+                }
                 else if(Pokemons.getName().equals("Charmander")){
                     pxnv = new JLabel("", newcmd, JLabel.CENTER);
                 }       
                 else if(Pokemons.getName().equals("Charmander2")){
                     pxnv = new JLabel("", newcmd2, JLabel.CENTER);
                 } 
+                else if(Pokemons.getName().equals("Charmander3")){
+                    pxnv = new JLabel("", newcmd3, JLabel.CENTER);
+                }
                 else if(Pokemons.getName().equals("Squirtle")){
                     pxnv = new JLabel("", newsqt, JLabel.CENTER);
                 } 
                 else if(Pokemons.getName().equals("Squirtle2")){
                     pxnv = new JLabel("", newsqt2, JLabel.CENTER);
-                }          
+                }  
+                else if(Pokemons.getName().equals("Squirtle3")){
+                    pxnv = new JLabel("", newsqt3, JLabel.CENTER);
+                }            
                 else if(Pokemons.getName().equals("Pikachu")){
                     pxnv = new JLabel("", newpkc, JLabel.CENTER);
                 } 
@@ -443,57 +455,58 @@ toBag.addActionListener(new ActionListener(){
 toStatus.addActionListener(new ActionListener(){
     public void actionPerformed(ActionEvent eatc){
         setVisible(false);
-        //BBS = new Base(Pokemons.getName(), Pokemons.getBaseSkill(), Pokemons.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
-        //new GUIbag(BBS, bag);
+
        if(Pokemons.getName().equals("Bulbasaur")){   //all +s
-            //pxnv = new JLabel("", iconBBS2, JLabel.CENTER);
-            //pxnv.equals("Bulbasaur2");
-            //pxnv.setText("Bulbasaur2");
-            //Pokemons.getName().format("Bulbasaur2", equals("Bulbasaur"));
-            //pxnv.getName().equals("Bulbasaur2");
-            //Pokemons.getName().equalsIgnoreCase("Bulbasaur2");
+
             new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
         }
         
         else if(Pokemons.getName().equals("Charmander")){
-            //pxnv = new JLabel("", newcmd, JLabel.CENTER);
-            //Pokemons.getName().equals("Charmander2");
+
             new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
         }       
         else if(Pokemons.getName().equals("Squirtle")){
-            //pxnv = new JLabel("", newsqt, JLabel.CENTER);
-            //Pokemons.getName().equals("Squirtle2");
+
             new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
         }         
         else if(Pokemons.getName().equals("Pikachu")){
-            //pxnv = new JLabel("", newpkc, JLabel.CENTER);
-            //Pokemons.getName().equals("Pikachu2");
+
             new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
         }    
         // 2
         if(Pokemons.getName().equals("Bulbasaur2")){   //all +s
-            //pxnv = new JLabel("", iconBBS2, JLabel.CENTER);
-            //pxnv.equals("Bulbasaur2");
-            //pxnv.setText("Bulbasaur2");
-            //Pokemons.getName().format("Bulbasaur2", equals("Bulbasaur"));
-            //pxnv.getName().equals("Bulbasaur2");
-            //Pokemons.getName().equalsIgnoreCase("Bulbasaur2");
+
             new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
         }
         
         else if(Pokemons.getName().equals("Charmander2")){
-            //pxnv = new JLabel("", newcmd, JLabel.CENTER);
-            //Pokemons.getName().equals("Charmander2");
+
             new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
         }       
         else if(Pokemons.getName().equals("Squirtle2")){
-            //pxnv = new JLabel("", newsqt, JLabel.CENTER);
-            //Pokemons.getName().equals("Squirtle2");
+
             new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
         }         
         else if(Pokemons.getName().equals("Pikachu2")){
-            //pxnv = new JLabel("", newpkc, JLabel.CENTER);
-            //Pokemons.getName().equals("Pikachu2");
+
+            new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
+        }  
+        //3
+        if(Pokemons.getName().equals("Bulbasaur3")){   //all +s
+
+            new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
+        }
+        
+        else if(Pokemons.getName().equals("Charmander3")){
+
+            new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
+        }       
+        else if(Pokemons.getName().equals("Squirtle3")){
+
+            new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
+        }         
+        else if(Pokemons.getName().equals("Pikachu3")){
+
             new GUIstatus(Pokemons, bag, namePokemon, myMana, myEXP, myHP);
         }  
 
