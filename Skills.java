@@ -22,7 +22,7 @@ public class Skills {
     public String getName(){
         return skillName;
     }
-    public int getDamge(){
+    public int getDamage(){
         return skillDamage;
     }
     public int getheal(){
