@@ -19,8 +19,8 @@ public class Base extends BasePokemon{
     private int pokeball; // money
     private int fight; //killmonster
     private String skill;
-    private int chargeATK; // MaxMana
-    private int maxEXP;
+    //private int chargeATK; // MaxMana
+    //private int maxEXP;
     private Bag myBag; //Nbag
     
     public Base(String getName, String baseSkill, int baseDamage, int baseHP, int baseEXP, int basePokeball, int baseMana, int baseDef, int baseLevel, int baseKillmon){
@@ -35,8 +35,8 @@ public class Base extends BasePokemon{
         this.skill = baseSkill;
         this.fight = baseKillmon;
         this.MaxCharHP = 100;
-        this.chargeATK = 0;
-        this.maxEXP = 0;
+        //this.chargeATK = 0;
+        //this.maxEXP = 0;
         this.myBag = new Bag();
         
         }
@@ -61,12 +61,16 @@ public class Base extends BasePokemon{
         public int getPokeball(){
             return pokeball;
         }
+        public int MaxCharHP(){
+            return 100;
+        }
         public String getBaseSkill(){
             return skill;
         }
         public void getItem(Item item){
             myBag.AddItem(item);
         }
+
 
     public boolean getLevel(int maxEXP){
             if(exp == maxEXP){
@@ -79,7 +83,9 @@ public class Base extends BasePokemon{
         public void getEXP(int newEXP){
             exp += newEXP;
             getLevel();
-        } 
+        }
+        
+        
 }
         
         
