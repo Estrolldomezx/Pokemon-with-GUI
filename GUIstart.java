@@ -23,7 +23,7 @@ public class GUIstart extends JFrame{
         JLabel Background;
         JButton button1 = new JButton("Become a Pokemon trainer");
         button1.setFont(new Font("Eras Demi ITC", Font.BOLD, 20));
-        ImageIcon img = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\menu.JPG");
+        ImageIcon img = new ImageIcon("img\\menu.JPG");
         Background = new JLabel("", img, JLabel.CENTER );
         Background.setLayout(null);
         button1.setBounds(238,360,326,50);
@@ -35,7 +35,7 @@ public class GUIstart extends JFrame{
         
         button1.addActionListener((ActionEvent e) -> {
             setVisible(false);
-            new GUIChoosePokemon();
+            new Pokename();
         });
         
         setSize(800,600);
