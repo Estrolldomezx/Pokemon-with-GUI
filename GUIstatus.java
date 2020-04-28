@@ -108,7 +108,7 @@ public class GUIstatus extends JFrame{
             pic.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0));
         }
         else if(Pokemons.getName().equals("Squirtle3")){
-            JLabel pic = new JLabel("", qt2,JLabel.CENTER);
+            JLabel pic = new JLabel("", qt3,JLabel.CENTER);
             c.add(pic, BorderLayout.WEST);
             pic.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0));
         }
