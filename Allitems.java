@@ -28,7 +28,7 @@ public class Allitems{
     int i = (int)Math.random()*10;
     
     public Allitems() {
-        this.AllItem1 = new ArrayList();
+        this.AllItem1 = new ArrayList<Item>();
         AllItem1.add(item1);
         AllItem1.add(item2);
         AllItem1.add(item3);
