@@ -1,5 +1,0 @@
-NullpointerException ประกาศตัวแปรแล้วลืม new แล้วเราพยายามไป .เพื่อเรียก method ให้มัน
-IOException เปิดไฟล์ ต้องอยู่ใน try catch box
-MyOwnException สร้าง exception เป็นของตัวเอง
-
-RuntimeException เป็น uncheck 
