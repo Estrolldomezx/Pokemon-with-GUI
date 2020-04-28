@@ -19,9 +19,9 @@ public class SendMons {
     public Monster mon6 = new Monster("Giratina",100,12);
     public Monster mon7 = new Monster("Dialga",100,13);
     public Monster mon8 = new Monster("Kyogre",100,14);
-    int i ;
+    
     Random rand = new Random();
-    i = rand.nextInt(8);
+    int i = rand.nextInt(8);
     
     public SendMons(){
         this.Allpokemon = new ArrayList(); //edit Item -> Monster
