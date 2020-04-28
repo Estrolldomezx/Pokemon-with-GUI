@@ -340,8 +340,6 @@ bA.addActionListener(new ActionListener(){
         if(mahp == 0)
             toCharacter.setEnabled(true);
         
-        efk.setVisible(false);
-        
         mahp -= Pokemons.getDamage();
         myEXP += 10;
         myMana += 10;
@@ -514,7 +512,6 @@ skb.addActionListener(new ActionListener(){
           skb.setEnabled(false);
           JOptionPane.showMessageDialog(null,"Skill: "+skills.getName()+" (Heal: "+skills.getheal()+" Damage: "+skills.getDamage()+")");
         
-        efk.setVisible(true);
         
         myHP += skills.getheal();
         myMana -= skills.getMana();
