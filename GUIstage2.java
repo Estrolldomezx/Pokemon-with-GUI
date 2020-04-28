@@ -214,6 +214,7 @@ public class GUIstage2 extends JFrame{
          //Position A
          JButton bA = new JButton("Attack");
          bA.setFont(new Font("Eras Demi ITC", Font.BOLD, 23));
+
          if(this.iA.getName().equals("Berry")){
              itA = new JLabel(iA.getName(), iconberry, JLabel.CENTER );
          }
@@ -387,6 +388,14 @@ bA.addActionListener(new ActionListener(){
         if(mahp <= 0){
             countMon++;
             mahp = 0;
+            if(dca==0){
+                countMon++;
+                dca++;
+             }
+             pA.setEnabled(false);
+             bA.setEnabled(false); 
+             itAb.setVisible(true);
+             itA.setVisible(true);
          }
         else if(mahp >= 100){
             mahp = 100;
@@ -495,7 +504,7 @@ toStatus.addActionListener(new ActionListener(){
 
 itAb.addActionListener(new ActionListener(){
     public void actionPerformed(ActionEvent eatc){
-         if(mahp<=0)
+         if(mahp <= 0)
            toCharacter.setEnabled(true);
         int n = JOptionPane.showConfirmDialog(null,"Select "+iA.getName()+" ?","selected",JOptionPane.YES_NO_OPTION);
         
