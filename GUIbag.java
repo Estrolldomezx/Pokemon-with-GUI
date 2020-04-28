@@ -30,9 +30,9 @@ public class GUIbag extends JFrame{
 
     public GUIbag(Base base, Bag bag, String namePokemon){
         super("Bag");
-        this.berry = bag.countItem("Berry"); //on
-        this.potion = bag.countItem("Potion"); //mt
-        this.superpotion = bag.countItem("Superpotion"); //pt
+        this.berry = bag.countItem("Berry"); 
+        this.potion = bag.countItem("Potion"); 
+        this.superpotion = bag.countItem("Superpotion"); 
         this.item4 = bag.countItem("Upgrade");
         this.item5 = bag.countItem("Dragon Scale");
         this.item6 = bag.countItem("King Rock");
@@ -435,7 +435,6 @@ public class GUIbag extends JFrame{
             }
         });        
 
-        //setSize(1280,700);
         setSize(563,605);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
