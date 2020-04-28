@@ -27,15 +27,21 @@ public class Allitems{
     Random rand = new Random();
 
     public Allitems() {
-        this.AllItem1 = new ArrayList<Item>();
+        this.AllItem1 = new ArrayList();
         AllItem1.add(item1);
         AllItem1.add(item2);
         AllItem1.add(item3);
         AllItem1.add(item4);
+        AllItem1.add(item5);
+        AllItem1.add(item6);
+        AllItem1.add(item7);
+        AllItem1.add(item8);
+        AllItem1.add(item9);
+        AllItem1.add(item10);
     }
 
     public Item dropItem(){
-        int i = (int)Math.random()*11;
+        int i = (int)Math.random()*10;
         return AllItem1.get(i);
         }
 
