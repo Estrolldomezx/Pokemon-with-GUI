@@ -23,9 +23,9 @@ public class Allitems{
     public Stone item10 = new Stone("Unova Stone",60); 
 
     public Pokeball item11 = new Pokeball("Pokeball", 150);
-    int i = (int)Math.random()*10;
     Random rand = new Random();
-
+    int i = (int)Math.random()*10;
+    
     public Allitems() {
         this.AllItem1 = new ArrayList();
         AllItem1.add(item1);
@@ -41,9 +41,7 @@ public class Allitems{
     }
 
     public Item dropItem(){
-        //int i = (int)Math.random()*10;
         try{
-            //int i = (int)Math.random()*10;
             return AllItem1.get(i);
         }
         catch(NullPointerException ex1){
