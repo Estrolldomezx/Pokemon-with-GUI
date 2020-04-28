@@ -15,6 +15,10 @@ import java.util.concurrent.TimeUnit;
  */
 public class GUIstage2 extends JFrame{
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private SendMons allMon = new SendMons();
     private Monster mA = allMon.ShowMon();
     
