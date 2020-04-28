@@ -9,7 +9,7 @@
  * @author Admin
  */
 public class Item {
-    private String itemName;
+    protected String itemName;
     
     public Item(String iname){
         this.itemName = iname;
