@@ -12,16 +12,15 @@ public class Base extends BasePokemon{
 
    // private String name; //add
     private int mana;
-    private int def; //armor
+    private int def; 
     private int exp;
     private int level;
     private int damage;
-    private int pokeball; // money
-    private int fight; //killmonster
+    private int pokeball; 
+    private int fight; 
     private String skill;
-    //private int chargeATK; // MaxMana
-    //private int maxEXP;
-    private Bag myBag; //Nbag
+
+    private Bag myBag; 
     
     public Base(String getName, String baseSkill, int baseDamage, int baseHP, int baseEXP, int basePokeball, int baseMana, int baseDef, int baseLevel, int baseKillmon){
         super(getName);
@@ -35,8 +34,7 @@ public class Base extends BasePokemon{
         this.skill = baseSkill;
         this.fight = baseKillmon;
         this.MaxCharHP = 100;
-        //this.chargeATK = 0;
-        //this.maxEXP = 0;
+
         this.myBag = new Bag();
         
         }
