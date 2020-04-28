@@ -24,7 +24,7 @@ public class SendMons {
     int i = rand.nextInt(8);
     
     public SendMons(){
-        this.Allpokemon = new ArrayList<Monster>; //edit Item -> Monster
+        this.Allpokemon = new ArrayList<Monster>(); //edit Item -> Monster
         Allpokemon.add(mon1);
         Allpokemon.add(mon2);
         Allpokemon.add(mon3);
