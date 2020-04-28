@@ -389,7 +389,6 @@ bA.addActionListener(new ActionListener(){
             countMon++;
             mahp = 0;
             if(dca==0){
-                countMon++;
                 dca++;
              }
              pA.setEnabled(false);
