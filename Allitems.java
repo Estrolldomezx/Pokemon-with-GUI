@@ -23,7 +23,7 @@ public class Allitems{
     public Stone item10 = new Stone("Unova Stone",60); 
 
     public Pokeball item11 = new Pokeball("Pokeball", 150);
-
+    int i = (int)Math.random()*10;
     Random rand = new Random();
 
     public Allitems() {
@@ -41,11 +41,25 @@ public class Allitems{
     }
 
     public Item dropItem(){
-        int i = (int)Math.random()*10;
-        return AllItem1.get(i);
+        //int i = (int)Math.random()*10;
+        try{
+            //int i = (int)Math.random()*10;
+            return AllItem1.get(i);
         }
+        catch(NullPointerException ex1){
+            System.out.print("Exception occured :" + ex1);
+        }
+        return AllItem1.get(i);
+
+    }
 
     public Item getItem(int i){
+        try{
+            return AllItem1.get(i);
+        }
+        catch(IndexOutOfBoundsException ex2){
+            System.out.print("Exception occured :" + ex2);
+        }
         return AllItem1.get(i);
     }
     
