@@ -17,6 +17,7 @@ public class GUIstage2 extends JFrame{
 
     private SendMons allMon = new SendMons();
     private Monster mA = allMon.ShowMon();
+    
     private Allitems allitem = new Allitems();
     private Item iA = allitem.dropItem();
     
@@ -219,28 +220,28 @@ public class GUIstage2 extends JFrame{
              itA = new JLabel(iA.getName(), iconberry, JLabel.CENTER );
          }
          else if(this.iA.getName().equals("Potion")){
-             itA = new JLabel(iA.getName(), potion, JLabel.LEFT );
+             itA = new JLabel(iA.getName(), potion, JLabel.CENTER );
          }
          else if(this.iA.getName().equals("Super potion")){
-            itA = new JLabel(iA.getName(), superpotion, JLabel.LEFT );
+            itA = new JLabel(iA.getName(), superpotion, JLabel.CENTER );
         }
         else if(this.iA.getName().equals("Upgrade")){
-            itA = new JLabel(iA.getName(), item4, JLabel.LEFT );
+            itA = new JLabel(iA.getName(), item4, JLabel.CENTER );
         }
          else if(iA.getName().equals("Dragon Scale")){
-            itA = new JLabel(iA.getName(), item5, JLabel.LEFT );
+            itA = new JLabel(iA.getName(), item5, JLabel.CENTER );
          }
          else if(iA.getName().equals("King Rock")){
-            itA = new JLabel(iA.getName(), item6, JLabel.LEFT );
+            itA = new JLabel(iA.getName(), item6, JLabel.CENTER );
          }
          else if(iA.getName().equals("Metal Coat")){
-            itA = new JLabel(iA.getName(), item7, JLabel.LEFT );
+            itA = new JLabel(iA.getName(), item7, JLabel.CENTER );
          }
          else if(iA.getName().equals("Sinnoh Stone")){
-            itA = new JLabel(iA.getName(), item8, JLabel.LEFT );
+            itA = new JLabel(iA.getName(), item8, JLabel.CENTER );
          }
          else if(iA.getName().equals("Sun Stone")){
-            itA = new JLabel(iA.getName(), item9, JLabel.LEFT );
+            itA = new JLabel(iA.getName(), item9, JLabel.CENTER );
          }
          else{
             itA = new JLabel(iA.getName(), item10, JLabel.LEFT );
@@ -337,6 +338,7 @@ p.add(p2, BorderLayout.SOUTH);
 
 //event & handler
 bA.addActionListener(new ActionListener(){
+    @Override
     public void actionPerformed(ActionEvent eata){
         if(mahp == 0)
             toCharacter.setEnabled(true);
@@ -420,6 +422,7 @@ bA.addActionListener(new ActionListener(){
 });
      
 toCharacter.addActionListener(new ActionListener(){
+    @Override
     public void actionPerformed(ActionEvent eatc){
         setVisible(false);
         BBS = new Base(Pokemons.getName(), Pokemons.getBaseSkill(), Pokemons.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
@@ -429,6 +432,7 @@ toCharacter.addActionListener(new ActionListener(){
 });
 
 toBag.addActionListener(new ActionListener(){
+    @Override
     public void actionPerformed(ActionEvent eatc){
         setVisible(false);
         BBS = new Base(Pokemons.getName(), Pokemons.getBaseSkill(), Pokemons.getDamage(), myHP, myEXP, myPokeball, myMana, myDEF, myLevel, countMon);
@@ -441,6 +445,7 @@ toBag.addActionListener(new ActionListener(){
 });
 
 toStatus.addActionListener(new ActionListener(){
+    @Override
     public void actionPerformed(ActionEvent eatc){
         setVisible(false);
 
@@ -502,6 +507,7 @@ toStatus.addActionListener(new ActionListener(){
 });
 
 itAb.addActionListener(new ActionListener(){
+    @Override
     public void actionPerformed(ActionEvent eatc){
          if(mahp <= 0)
            toCharacter.setEnabled(true);
@@ -516,6 +522,7 @@ itAb.addActionListener(new ActionListener(){
 });
     
 skb.addActionListener(new ActionListener(){
+    @Override
     public void actionPerformed(ActionEvent eatc){
           skb.setEnabled(false);
           JOptionPane.showMessageDialog(null,"Skill: "+skills.getName()+" (Heal: "+skills.getheal()+" Damage: "+skills.getDamage()+")");
