@@ -36,25 +36,17 @@ public class GUIstage2 extends JFrame{
 
     private JLabel pxnv;
     private JLabel pA;
-    //private JLabel pB;
-    //private JLabel pC;
     private JLabel itA;
-    //private JLabel itB;
-    //private JLabel itC;
 
-    private  int myHP; //php
+    private  int myHP; 
     private int myDEF;
     private int myEXP;
     private int myLevel;
     private int myMana = 0;
     private int myPokeball;
-    private int countMon;           //
-    private int mahp = 100;                 //
-   // private int mbhp;
-   // private int mchp;  //edit float to int
-    private int dca = 0;             //
-    private int dcb = 0;
-    private int dcc = 0;
+    private int countMon;           
+    private int mahp = 100;                 
+    private int dca = 0;             
     
     public GUIstage2(Base Pokemons, Bag bag, String namePokemon){
         super("Battle Stage");
@@ -65,7 +57,6 @@ public class GUIstage2 extends JFrame{
         this.myMana = Pokemons.getMana();
         this.myPokeball = Pokemons.getPokeball();
         this.countMon = Pokemons.getKillmon();
-        //this.mahp = mA.CharHP;
         this.mahp = 100;
         //skill
         if(Pokemons.getBaseSkill().equals("Solar beam"))
@@ -81,82 +72,72 @@ public class GUIstage2 extends JFrame{
         JPanel p = new JPanel();
         p.setLayout(new BorderLayout());
         
-        //p.setBackground(Color.BLACK);
         add(p);
         //icon menu
         ImageIcon iconpk = new ImageIcon("img\\iconJB.PNG");
-        ImageIcon iconlv = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconLV.PNG");
-        ImageIcon iconexp = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconEXP.PNG");
-        ImageIcon iconHP = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconHP.PNG");
-        ImageIcon iconfight = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconFIGHT.PNG");
-        ImageIcon iconpokeball = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPOKEBALL.PNG");
-        ImageIcon iconbag = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBAG2.PNG");
-        ImageIcon iconshop = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSHOP2.PNG");
-        ImageIcon iconnext = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconNEXT3.PNG");
-
-        //border
-        //ImageIcon border = new ImageIcon("img/border2.PNG");
+        ImageIcon iconlv = new ImageIcon("img\\iconLV.PNG");
+        ImageIcon iconexp = new ImageIcon("img\\iconEXP.PNG");
+        ImageIcon iconHP = new ImageIcon("img\\iconHP.PNG");
+        ImageIcon iconfight = new ImageIcon("img\\iconFIGHT.PNG");
+        //ImageIcon iconpokeball = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPOKEBALL.PNG");
+        ImageIcon iconbag = new ImageIcon("img\\iconBAG2.PNG");
+        ImageIcon iconshop = new ImageIcon("img\\iconSHOP2.PNG");
+        ImageIcon iconnext = new ImageIcon("img\\iconNEXT3.PNG");
         
         //icon pokemon
-        ImageIcon iconbbs = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBBS.GIF");
-        ImageIcon newbbs = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stageBBS2.GIF");
+        ImageIcon iconbbs = new ImageIcon("img\\iconBBS.GIF");
+        ImageIcon newbbs = new ImageIcon("img\\stageBBS2.GIF");
         //stage
-        ImageIcon iconBBS2 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconBBS2.GIF");
+        ImageIcon iconBBS2 = new ImageIcon("img\\new\\iconBBS2.GIF");
         //upgrade2
         ImageIcon newbbs2 = new ImageIcon("img\\stageBBS3.GIF");
         //upgrade3
         ImageIcon newbbs3 = new ImageIcon("img\\stageBBS4.GIF"); //************** */
 
-        ImageIcon iconcmd = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconCMD.GIF");
-        ImageIcon newcmd = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\test.GIF");
+        ImageIcon iconcmd = new ImageIcon("img\\iconCMD.GIF");
+        ImageIcon newcmd = new ImageIcon("img\\test.GIF");
         //upgrade2
         ImageIcon newcmd2 = new ImageIcon("img\\stageCMD2.GIF");
         //upgrade3
         ImageIcon newcmd3 = new ImageIcon("img\\stageCMD3.GIF"); //************* */
 
-        ImageIcon iconsqt = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSQT1.GIF");
-        ImageIcon newsqt = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stageSQT.GIF");
+        ImageIcon iconsqt = new ImageIcon("img\\iconSQT1.GIF");
+        ImageIcon newsqt = new ImageIcon("img\\stageSQT.GIF");
         //upgrade2
         ImageIcon newsqt2 = new ImageIcon("img\\stageSQT2.GIF");
         //upgrade4
         ImageIcon newsqt3 = new ImageIcon("img\\stageSQT3.GIF"); //************ */
 
-        ImageIcon iconpkc = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPKC.GIF");
-        ImageIcon newpkc = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stagePKC.GIF");
+        ImageIcon iconpkc = new ImageIcon("img\\iconPKC.GIF");
+        ImageIcon newpkc = new ImageIcon("img\\stagePKC.GIF");
         //upgrade2
         ImageIcon newpkc2 = new ImageIcon("img\\stagePKC2.GIF");
         
         //iconEnemy
-        ImageIcon iconsnorlax = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconNORLAX.GIF");
-        ImageIcon iconlapras = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconLAPRAS.GIF");
-        ImageIcon iconlugia = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconLUGIA.GIF");
-        ImageIcon icongyarados = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconGYARADOS.GIF");
-        ImageIcon icondarkrai = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconDARKRAI.GIF");
-        ImageIcon icongiratina = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconGIRATINA.GIF");
-        //ImageIcon iconkyogre = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconKYOGRE.GIF");
-        //*** */
-        ImageIcon iconkyogre = new ImageIcon("C:\\Users\\Admin\\Desktop\\cccc\\iconKYOGRE.GIF");
-
-        ImageIcon icondialga = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconDIALGA.GIF");
+        ImageIcon iconsnorlax = new ImageIcon("img\\new\\iconNORLAX.GIF");
+        ImageIcon iconlapras = new ImageIcon("img\\new\\iconLAPRAS.GIF");
+        ImageIcon iconlugia = new ImageIcon("img\\new\\iconLUGIA.GIF");
+        ImageIcon icongyarados = new ImageIcon("img\\new\\iconGYARADOS.GIF");
+        ImageIcon icondarkrai = new ImageIcon("img\\new\\iconDARKRAI.GIF");
+        ImageIcon icongiratina = new ImageIcon("img\\new\\iconGIRATINA.GIF");
+        ImageIcon iconkyogre = new ImageIcon("img\\new\\iconKYOGRE.GIF");
+        ImageIcon icondialga = new ImageIcon("img\\new\\iconDIALGA.GIF");
         //items
-        ImageIcon iconberry = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\berry.PNG"); //ion
-        ImageIcon potion = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\potion.PNG"); //imt
-        ImageIcon superpotion = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\superpotion.PNG"); //ipt
-        ImageIcon item4 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\Upgrade.PNG");
-        ImageIcon item5 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\DragonScale.PNG");
-        ImageIcon item6 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\KingRock.PNG");
-        ImageIcon item7 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\MetalCoat.PNG");
-        ImageIcon item8 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\SinnohStone.PNG");
-        ImageIcon item9 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\SunStone.PNG");
-        ImageIcon item10 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\UnovaStone.PNG");
+        ImageIcon iconberry = new ImageIcon("img\\new\\berry.PNG"); //ion
+        ImageIcon potion = new ImageIcon("img\\new\\potion.PNG"); //imt
+        ImageIcon superpotion = new ImageIcon("img\\new\\superpotion.PNG"); //ipt
+        ImageIcon item4 = new ImageIcon("img\\new\\Upgrade.PNG");
+        ImageIcon item5 = new ImageIcon("img\\new\\DragonScale.PNG");
+        ImageIcon item6 = new ImageIcon("img\\new\\KingRock.PNG");
+        ImageIcon item7 = new ImageIcon("img\\new\\MetalCoat.PNG");
+        ImageIcon item8 = new ImageIcon("img\\new\\SinnohStone.PNG");
+        ImageIcon item9 = new ImageIcon("img\\new\\SunStone.PNG");
+        ImageIcon item10 = new ImageIcon("img\\new\\UnovaStone.PNG");
         ImageIcon sk = new ImageIcon("test.gif");
         ImageIcon coe = new ImageIcon("test.gif");
 
-        ImageIcon stage = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\stage.PNG");
+        ImageIcon stage = new ImageIcon("img\\stage.PNG");
         
-
-        //JLabel Background;
-        //Background = new JLabel("", stage, JLabel.CENTER);
                 //top
                 JPanel p1 = new JPanel();
                 p1.setLayout(new GridLayout(1,5));
@@ -186,10 +167,6 @@ public class GUIstage2 extends JFrame{
                 //CENTER
                 JPanel p3 = new JPanel();
                 p3.setLayout(new GridLayout(1,2));
-                //p3.setBackground(Color.BLACK);
-                //p3.setBackground(stage);
-                //JLabel Background;
-                //Background = new JLabel("", stage, JLabel.CENTER);
 
 
                 JLabel efk = new JLabel("", sk, JLabel.CENTER);
@@ -231,9 +208,7 @@ public class GUIstage2 extends JFrame{
                 JButton skb = new JButton("Skill : " + skills.getName());
                 skb.setFont(new Font("Eras Demi ITC", Font.BOLD, 23));
                 skb.setEnabled(false);
-                //skb.setBounds(300, 400, 250, 100);
-                //skb.setEnabled(false);
-                //skb.setBounds(200, 40, 200, 100);
+
 
                 JLabel namehp = new JLabel("HP : " + myHP + "/" + Pokemons.getHP(), JLabel.LEFT);
                 JLabel def = new JLabel("Def : " + myDEF + "/100", JLabel.LEFT);
@@ -243,13 +218,11 @@ public class GUIstage2 extends JFrame{
                 statusLabel.setText("Now!  you fighting the " + mA.getName() + " HP: "+ mahp + "/100");
                 statusLabel.setFont(new Font("Eras Demi ITC", Font.BOLD, 23));
                 statusLabel.setForeground(Color.WHITE);
-
-                //p3.setLayout(new GridLayout(3 ,2));
          //Position A
          JButton bA = new JButton("Attack");
          bA.setFont(new Font("Eras Demi ITC", Font.BOLD, 23));
          if(this.iA.getName().equals("Berry")){
-             itA = new JLabel(iA.getName(), iconberry, JLabel.LEFT );
+             itA = new JLabel(iA.getName(), iconberry, JLabel.CENTER );
          }
          else if(this.iA.getName().equals("Potion")){
              itA = new JLabel(iA.getName(), potion, JLabel.LEFT );
@@ -313,11 +286,6 @@ public class GUIstage2 extends JFrame{
          itA.setBounds(200, 500, 200, 100);
          itA.setVisible(false);
          itAb.setVisible(false);
-         //skb.setVisible(false);
-
-         //JLabel Border = new JLabel("", border,JLabel.CENTER);
-         //p3.add(Border, BorderLayout.CENTER);
-
 
          //pBackground
          JPanel Background = new JPanel();
@@ -326,27 +294,18 @@ public class GUIstage2 extends JFrame{
          Background.setBackground(Color.BLACK);
          JLabel background = new JLabel();
          background = new JLabel("", stage, JLabel.CENTER );
-         //Background.setLayout(null);
          Background.add(background);
-         //Background.add(p3);
          p.add(statusLabel);
          
          p.add(pxnv);
          p.add(pA);
-         //pxnv.setBounds(100, 100, 200, 200);
          p.add(Background, BorderLayout.CENTER);
-         statusLabel.setBounds(370, 100, 500, 50);
-        // Background.add(pxnv);
+         statusLabel.setBounds(370, 100, 550, 50);
 
          //p3
          p3.setBorder(BorderFactory.createEmptyBorder(100, 0, 0, 0));
-         //p3.add(pxnv); //pikachu icon
          pxnv.setBounds(280, 220, 200, 200);
-        // p3.add(efk);  
-         //p3.add(pA); //enemy icon
          pA.setBounds(780, 220, 200, 200);
-         //Background.add(p3,BorderLayout.CENTER);
-
          bA.setBounds(100, 400, 120, 60);
          itA.setBounds(530, 400, 200, 100);
 
@@ -359,61 +318,9 @@ public class GUIstage2 extends JFrame{
          p4.add(itA);
          p4.add(itAb);
          p.add(p4, BorderLayout.WEST);
-        //skb.setBounds(300, 400, 250, 100);
-         /*
-
-         p3.add(bA); //button attack
-         bA.setBounds(200, 40, 40, 20);
-         p3.add(itA);
-         p3.add(itAb);
-         itA.setBounds(200, 40, 40, 20);
-         p3.add(skb); //hp
-         skb.setBounds(200, 40, 40, 20);
-         p.add(p3,BorderLayout.CENTER);
-*/    //  bA.setBounds(100, 400, 120, 60);
-
-       // itA.setBounds(530, 400, 200, 100);
-        // p3.add(pxnv);//null
-         //p3.add(namehp);
-
-         /*
-         JPanel p4 = new JPanel();
-         p4.setLayout(new BorderLayout());
-         p4.add(bA);
-         p4.add(itA);
-         p4.add(itAb);
-         p.add(p4, BorderLayout.CENTER);
-         //p4.add(skb); //button attack
-         //skb.setBounds(300, 400, 250, 100);
-         //bA.setBounds(200, 40, 200, 100);
-         p4.add(itA);
-         p4.add(itAb);
-
-         */
-         //itA.setBounds(200, 40, 200, 100);
-         //p4.add(bA); //hp
-         //skb.setBounds(200, 40, 200, 100);
-         //p3.add(skb); //skill thunder bolt
-         //p3.add(mana);
-         //skb.setBounds(300, 400, 250, 100);
-/*
-         //p3.add(KF);
-         p3.add(namehp); //hp150/150
-        // p3.add(def); //def 0/100
-         
-         p3.add(itAb);
-         p3.add(mana);
-         p3.add(itA);
-         p3.add(bA);
-         //p3.add(efk);
-         //p3.add(pA);
-*/
-       //  p.add(p3,BorderLayout.CENTER);
-
 //bottom
         
 JPanel p2 = new JPanel();
-//*JPanel empty = new JPanel();
 p2.setLayout(new GridLayout(1,3));
 
 JButton toBag = new JButton("  Bag", iconbag);
@@ -493,8 +400,6 @@ bA.addActionListener(new ActionListener(){
         else if(mahp >= 100){
             mahp = 100;
         }
-        //JLabel imgHP = new JLabel("HP : " + myHP + "/100", iconHP, JLabel.CENTER);
-        //imgHP.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
         imgHP.setText("HP : " + myHP + "/" + Pokemons.MaxCharHP);
 
         namehp.setText("HP: " + myHP + "/" + Pokemons.MaxCharHP());
@@ -503,10 +408,7 @@ bA.addActionListener(new ActionListener(){
         imgEXP.setText("EXP: " + myEXP);
         imgLEVEL.setText("Level: " + myLevel);
         imgFight.setText("Win: " + countMon);
-        //pA.setText(mA.getName()+"/ HP: "+ mahp);
         statusLabel.setText("Now!  you fighting the " + mA.getName() + " HP: "+ mahp + "/100");
-//                pB.setText(mB.getName()+"/ HP: "+mbhp);
-//                pC.setText(mC.getName()+"/ HP: "+mchp);
         
        if(myHP<=0){
             JOptionPane.showMessageDialog(null," GAME OVER! ");
@@ -618,40 +520,14 @@ skb.addActionListener(new ActionListener(){
     public void actionPerformed(ActionEvent eatc){
           skb.setEnabled(false);
           JOptionPane.showMessageDialog(null,"Skill: "+skills.getName()+" (Heal: "+skills.getheal()+" Damage: "+skills.getDamage()+")");
-          p3.setBackground(Color.black);
-          
-            if(mahp<=0) // && mbhp==0 && mchp==0
-                toCharacter.setEnabled(true);
-    
-        if(Pokemons.getName().equals("Bulbasaur")){
-            //efk.setIcon(new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\skbBBS.GIF"));
-
-        }
-
-        else if(Pokemons.getName().equals("Charmander")){
-            efk.setIcon(new ImageIcon("ack.gif"));
-
-        }
-        
-        else if(Pokemons.getName().equals("Squirtle")){
-            efk.setIcon(new ImageIcon("ack.gif"));
-
-        }
-        else if(Pokemons.getName().equals("Pikachu")){
-            efk.setIcon(new ImageIcon("ack.gif"));
-
-        }
         
         efk.setVisible(true);
         
         myHP += skills.getheal();
         myMana -= skills.getMana();
         myEXP += 25;
-        
         mahp -= skills.getDamage();
-       // mbhp -= skills.getDamage();
-       // mchp -= skills.getDamage();
-        
+
         //check
         if(myHP <= 0){
             myHP = 0;
@@ -696,23 +572,18 @@ skb.addActionListener(new ActionListener(){
                    dca++;
                 }
                  
-                //mahp = 0;
         }
         else if(mahp >= mA.getHP()){
             mahp = mA.getHP();
         }
         //update
-        //p.setBackground(Color.BLACK);
         namehp.setText("HP: " + myHP + "/" + Pokemons.getHP());
         def.setText("DEF: " + myDEF + "/100");
         mana.setText("Mana: " + myMana + "/100");
         imgEXP.setText("EXP: " + myEXP);
         imgLEVEL.setText("Level: "+myLevel);
         imgFight.setText("Win: "+countMon);
-        //pA.setText(mA.getName()+"/ HP: "+mahp);
-        statusLabel.setText("Now!  you fighting the " + mA.getName() + " HP: "+ mahp + "/100");
-        //pB.setText(mB.getName()+"/ HP: "+mbhp);
-        //pC.setText(mC.getName()+"/ HP: "+mchp);    
+        statusLabel.setText("Now!  you fighting the " + mA.getName() + " HP: "+ mahp + "/100");  
         }
 
 });    
@@ -723,9 +594,6 @@ skb.addActionListener(new ActionListener(){
     setResizable(false);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setVisible(true);
-    
-
     }
-
 }    
         
