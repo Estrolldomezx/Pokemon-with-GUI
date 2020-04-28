@@ -12,7 +12,7 @@ public class Monster extends BasePokemon{
     private int monDamage;
     
     public Monster(String monname, int monhp, int damage){
-        super(monDamage);
+        super(monname);
         this.CharHP = monhp;
         this.monDamage = damage;
     }
