@@ -84,7 +84,7 @@ public class GUIstage2 extends JFrame{
         //p.setBackground(Color.BLACK);
         add(p);
         //icon menu
-        ImageIcon iconpk = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconJB.PNG");
+        ImageIcon iconpk = new ImageIcon("img\\iconJB.PNG");
         ImageIcon iconlv = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconLV.PNG");
         ImageIcon iconexp = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconEXP.PNG");
         ImageIcon iconHP = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconHP.PNG");
@@ -239,6 +239,11 @@ public class GUIstage2 extends JFrame{
                 JLabel def = new JLabel("Def : " + myDEF + "/100", JLabel.LEFT);
                 JLabel mana = new JLabel("Mana : " + myMana + "/100", JLabel.LEFT);
 
+                JLabel statusLabel = new JLabel();
+                statusLabel.setText("Now!  you fighting the " + mA.getName() + " HP: "+ mahp + "/100");
+                statusLabel.setFont(new Font("Eras Demi ITC", Font.BOLD, 23));
+                statusLabel.setForeground(Color.WHITE);
+
                 //p3.setLayout(new GridLayout(3 ,2));
          //Position A
          JButton bA = new JButton("Attack");
@@ -276,28 +281,28 @@ public class GUIstage2 extends JFrame{
 
  
          if(mA.getName().equals("Snorlax")){
-             pA = new JLabel(mA.getName() + "/ HP: " + mahp, iconsnorlax, JLabel.LEFT);
+             pA = new JLabel(iconsnorlax, JLabel.LEFT);
          }
          else if(mA.getName().equals("Lapras")){
-             pA = new JLabel(mA.getName()+"/ HP: " + mahp, iconlapras, JLabel.LEFT);
+             pA = new JLabel(iconlapras, JLabel.LEFT);
          }       
          else if(mA.getName().equals("Darkrai")){
-             pA = new JLabel(mA.getName()+"/ HP: " + mahp, icondarkrai, JLabel.LEFT);
+             pA = new JLabel(icondarkrai, JLabel.LEFT);
          }
          else if(mA.getName().equals("Gyarados")){
-             pA = new JLabel(mA.getName()+"/ HP: " + mahp, icongyarados, JLabel.LEFT);
+             pA = new JLabel(icongyarados, JLabel.LEFT);
          }
          else if(mA.getName().equals("Lugia")){
-             pA = new JLabel(mA.getName()+"/ HP: " + mahp, iconlugia, JLabel.LEFT);
+             pA = new JLabel(iconlugia, JLabel.LEFT);
          }
          else if(mA.getName().equals("Giratina")){
-             pA = new JLabel(mA.getName()+"/ HP: " + mahp, icongiratina, JLabel.LEFT);
+             pA = new JLabel(icongiratina, JLabel.LEFT);
          }
          else if(mA.getName().equals("Dialga")){
-             pA = new JLabel(mA.getName()+"/ HP: " + mahp, icondialga, JLabel.LEFT);
+             pA = new JLabel(icondialga, JLabel.LEFT);
          }
          else if(mA.getName().equals("Kyogre")){
-             pA = new JLabel(mA.getName()+"/ HP: " + mahp, iconkyogre, JLabel.LEFT);
+             pA = new JLabel(iconkyogre, JLabel.LEFT);
          }
 
          
@@ -318,15 +323,19 @@ public class GUIstage2 extends JFrame{
          JPanel Background = new JPanel();
          Background.setBorder(BorderFactory.createEmptyBorder(100, 0, 0, 0));
          Background.setLayout(new BorderLayout());
+         Background.setBackground(Color.BLACK);
          JLabel background = new JLabel();
          background = new JLabel("", stage, JLabel.CENTER );
          //Background.setLayout(null);
          Background.add(background);
          //Background.add(p3);
+         p.add(statusLabel);
+         
          p.add(pxnv);
          p.add(pA);
          //pxnv.setBounds(100, 100, 200, 200);
          p.add(Background, BorderLayout.CENTER);
+         statusLabel.setBounds(370, 100, 500, 50);
         // Background.add(pxnv);
 
          //p3
@@ -494,7 +503,8 @@ bA.addActionListener(new ActionListener(){
         imgEXP.setText("EXP: " + myEXP);
         imgLEVEL.setText("Level: " + myLevel);
         imgFight.setText("Win: " + countMon);
-        pA.setText(mA.getName()+"/ HP: "+ mahp);
+        //pA.setText(mA.getName()+"/ HP: "+ mahp);
+        statusLabel.setText("Now!  you fighting the " + mA.getName() + " HP: "+ mahp + "/100");
 //                pB.setText(mB.getName()+"/ HP: "+mbhp);
 //                pC.setText(mC.getName()+"/ HP: "+mchp);
         
@@ -699,7 +709,8 @@ skb.addActionListener(new ActionListener(){
         imgEXP.setText("EXP: " + myEXP);
         imgLEVEL.setText("Level: "+myLevel);
         imgFight.setText("Win: "+countMon);
-        pA.setText(mA.getName()+"/ HP: "+mahp);
+        //pA.setText(mA.getName()+"/ HP: "+mahp);
+        statusLabel.setText("Now!  you fighting the " + mA.getName() + " HP: "+ mahp + "/100");
         //pB.setText(mB.getName()+"/ HP: "+mbhp);
         //pC.setText(mC.getName()+"/ HP: "+mchp);    
         }
