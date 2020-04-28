@@ -157,7 +157,6 @@ public class GUIstage2 extends JFrame{
                 p1.add(imgHP);
                 p1.add(imgLEVEL);
                 p1.add(imgFight);
-                //p1.add(imgPokeball);
                 
                 p.add(p1,BorderLayout.NORTH);
                 
