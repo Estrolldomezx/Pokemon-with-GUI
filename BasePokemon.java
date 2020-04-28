@@ -8,7 +8,7 @@
  *
  * @author Admin
  */
-public class BasePokemon {
+abstract class BasePokemon {
     private String pokename;
     protected int CharHP;
     protected int MaxCharHP;
@@ -18,6 +18,7 @@ public class BasePokemon {
         CharHP = 0;
         MaxCharHP = 0;
     }
+    
     public String getName(){
         return pokename;
     }
