@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 import javax.swing.*;
+import javax.swing.border.Border;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.concurrent.TimeUnit;
@@ -78,7 +80,8 @@ public class GUIstage2 extends JFrame{
         //about skill
         JPanel p = new JPanel();
         p.setLayout(new BorderLayout());
-        p.setBackground(Color.BLACK);
+        
+        //p.setBackground(Color.BLACK);
         add(p);
         //icon menu
         ImageIcon iconpk = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconJB.PNG");
@@ -90,6 +93,9 @@ public class GUIstage2 extends JFrame{
         ImageIcon iconbag = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBAG2.PNG");
         ImageIcon iconshop = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconSHOP2.PNG");
         ImageIcon iconnext = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconNEXT3.PNG");
+
+        //border
+        //ImageIcon border = new ImageIcon("img/border2.PNG");
         
         //icon pokemon
         ImageIcon iconbbs = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconBBS.GIF");
@@ -127,7 +133,10 @@ public class GUIstage2 extends JFrame{
         ImageIcon icongyarados = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconGYARADOS.GIF");
         ImageIcon icondarkrai = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconDARKRAI.GIF");
         ImageIcon icongiratina = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconGIRATINA.GIF");
-        ImageIcon iconkyogre = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconKYOGRE.GIF");
+        //ImageIcon iconkyogre = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconKYOGRE.GIF");
+        //*** */
+        ImageIcon iconkyogre = new ImageIcon("C:\\Users\\Admin\\Desktop\\cccc\\iconKYOGRE.GIF");
+
         ImageIcon icondialga = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconDIALGA.GIF");
         //items
         ImageIcon iconberry = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\berry.PNG"); //ion
@@ -163,8 +172,7 @@ public class GUIstage2 extends JFrame{
                 imgLEVEL.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
                 JLabel imgFight = new JLabel("Win : " + countMon, iconfight, JLabel.CENTER);
                 imgFight.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
- //               JLabel imgPokeball = new JLabel("Pokeball : " + myPokeball, iconpokeball, JLabel.CENTER);
- //               imgPokeball.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
+
                 
                 p1.add(imgPK);
                 p1.add(imgEXP);
@@ -177,8 +185,13 @@ public class GUIstage2 extends JFrame{
                 
                 //CENTER
                 JPanel p3 = new JPanel();
+                p3.setLayout(new GridLayout(1,2));
                 //p3.setBackground(Color.BLACK);
                 //p3.setBackground(stage);
+                //JLabel Background;
+                //Background = new JLabel("", stage, JLabel.CENTER);
+
+
                 JLabel efk = new JLabel("", sk, JLabel.CENTER);
                 JLabel KF = new JLabel("", coe, JLabel.CENTER);
                 //item
@@ -215,15 +228,18 @@ public class GUIstage2 extends JFrame{
                 else if(Pokemons.getName().equals("Pikachu2")){
                     pxnv = new JLabel("", newpkc2, JLabel.CENTER);
                 } 
-
                 JButton skb = new JButton("Skill : " + skills.getName());
                 skb.setFont(new Font("Eras Demi ITC", Font.BOLD, 23));
                 skb.setEnabled(false);
+                //skb.setBounds(300, 400, 250, 100);
+                //skb.setEnabled(false);
+                //skb.setBounds(200, 40, 200, 100);
+
                 JLabel namehp = new JLabel("HP : " + myHP + "/" + Pokemons.getHP(), JLabel.LEFT);
                 JLabel def = new JLabel("Def : " + myDEF + "/100", JLabel.LEFT);
                 JLabel mana = new JLabel("Mana : " + myMana + "/100", JLabel.LEFT);
 
-                p3.setLayout(new GridLayout(3 ,2));
+                //p3.setLayout(new GridLayout(3 ,2));
          //Position A
          JButton bA = new JButton("Attack");
          bA.setFont(new Font("Eras Demi ITC", Font.BOLD, 23));
@@ -283,34 +299,94 @@ public class GUIstage2 extends JFrame{
          else if(mA.getName().equals("Kyogre")){
              pA = new JLabel(mA.getName()+"/ HP: " + mahp, iconkyogre, JLabel.LEFT);
          }
+
          
          JButton itAb = new JButton("Select ?");
          itAb.setFont(new Font("Eras Demi ITC", Font.BOLD, 23));
+
+         itAb.setBounds(200, 200, 250, 60);
+         itA.setBounds(200, 500, 200, 100);
          itA.setVisible(false);
          itAb.setVisible(false);
+         //skb.setVisible(false);
 
-         p3.add(pxnv); //pikachu icon
-         //pxnv.setBounds(300, 20, 200, 200);
-         p3.add(efk);  
+         //JLabel Border = new JLabel("", border,JLabel.CENTER);
+         //p3.add(Border, BorderLayout.CENTER);
 
-         p3.add(pA); //enemy icon
-         //pA.setBounds(300, 400, 200, 200);
 
+         //pBackground
+         JPanel Background = new JPanel();
+         Background.setBorder(BorderFactory.createEmptyBorder(100, 0, 0, 0));
+         Background.setLayout(new BorderLayout());
+         JLabel background = new JLabel();
+         background = new JLabel("", stage, JLabel.CENTER );
+         //Background.setLayout(null);
+         Background.add(background);
+         //Background.add(p3);
+         p.add(pxnv);
+         p.add(pA);
+         //pxnv.setBounds(100, 100, 200, 200);
+         p.add(Background, BorderLayout.CENTER);
+        // Background.add(pxnv);
+
+         //p3
+         p3.setBorder(BorderFactory.createEmptyBorder(100, 0, 0, 0));
+         //p3.add(pxnv); //pikachu icon
+         pxnv.setBounds(280, 220, 200, 200);
+        // p3.add(efk);  
+         //p3.add(pA); //enemy icon
+         pA.setBounds(780, 220, 200, 200);
+         //Background.add(p3,BorderLayout.CENTER);
+
+         bA.setBounds(100, 400, 120, 60);
+         itA.setBounds(530, 400, 200, 100);
+
+         //p4
+         JPanel p4 = new JPanel();
+         p4.setLayout(new GridLayout(4, 1));
+         p4.add(bA);
+         p4.add(skb);
+         
+         p4.add(itA);
+         p4.add(itAb);
+         p.add(p4, BorderLayout.WEST);
+        //skb.setBounds(300, 400, 250, 100);
+         /*
 
          p3.add(bA); //button attack
-         //bA.setBounds(200, 40, 40, 20);
+         bA.setBounds(200, 40, 40, 20);
          p3.add(itA);
          p3.add(itAb);
-         //itA.setBounds(200, 40, 40, 20);
+         itA.setBounds(200, 40, 40, 20);
          p3.add(skb); //hp
-         //skb.setBounds(200, 40, 40, 20);
+         skb.setBounds(200, 40, 40, 20);
+         p.add(p3,BorderLayout.CENTER);
+*/    //  bA.setBounds(100, 400, 120, 60);
+
+       // itA.setBounds(530, 400, 200, 100);
         // p3.add(pxnv);//null
          //p3.add(namehp);
 
+         /*
+         JPanel p4 = new JPanel();
+         p4.setLayout(new BorderLayout());
+         p4.add(bA);
+         p4.add(itA);
+         p4.add(itAb);
+         p.add(p4, BorderLayout.CENTER);
+         //p4.add(skb); //button attack
+         //skb.setBounds(300, 400, 250, 100);
+         //bA.setBounds(200, 40, 200, 100);
+         p4.add(itA);
+         p4.add(itAb);
 
+         */
+         //itA.setBounds(200, 40, 200, 100);
+         //p4.add(bA); //hp
+         //skb.setBounds(200, 40, 200, 100);
          //p3.add(skb); //skill thunder bolt
          //p3.add(mana);
-
+         //skb.setBounds(300, 400, 250, 100);
 /*
          //p3.add(KF);
          p3.add(namehp); //hp150/150
@@ -323,7 +399,8 @@ public class GUIstage2 extends JFrame{
          //p3.add(efk);
          //p3.add(pA);
 */
-         p.add(p3,BorderLayout.CENTER);
+       //  p.add(p3,BorderLayout.CENTER);
+
 //bottom
         
 JPanel p2 = new JPanel();
