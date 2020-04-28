@@ -79,7 +79,6 @@ public class GUIstage2 extends JFrame{
         ImageIcon iconexp = new ImageIcon("img\\iconEXP.PNG");
         ImageIcon iconHP = new ImageIcon("img\\iconHP.PNG");
         ImageIcon iconfight = new ImageIcon("img\\iconFIGHT.PNG");
-        //ImageIcon iconpokeball = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconPOKEBALL.PNG");
         ImageIcon iconbag = new ImageIcon("img\\iconBAG2.PNG");
         ImageIcon iconshop = new ImageIcon("img\\iconSHOP2.PNG");
         ImageIcon iconnext = new ImageIcon("img\\iconNEXT3.PNG");
@@ -114,14 +113,14 @@ public class GUIstage2 extends JFrame{
         ImageIcon newpkc2 = new ImageIcon("img\\stagePKC2.GIF");
         
         //iconEnemy
-        ImageIcon iconsnorlax = new ImageIcon("img\\new\\iconNORLAX.GIF");
-        ImageIcon iconlapras = new ImageIcon("img\\new\\iconLAPRAS.GIF");
-        ImageIcon iconlugia = new ImageIcon("img\\new\\iconLUGIA.GIF");
-        ImageIcon icongyarados = new ImageIcon("img\\new\\iconGYARADOS.GIF");
-        ImageIcon icondarkrai = new ImageIcon("img\\new\\iconDARKRAI.GIF");
-        ImageIcon icongiratina = new ImageIcon("img\\new\\iconGIRATINA.GIF");
-        ImageIcon iconkyogre = new ImageIcon("img\\new\\iconKYOGRE.GIF");
-        ImageIcon icondialga = new ImageIcon("img\\new\\iconDIALGA.GIF");
+        ImageIcon iconsnorlax = new ImageIcon("img\\iconNORLAX.GIF");
+        ImageIcon iconlapras = new ImageIcon("img\\iconLAPRAS.GIF");
+        ImageIcon iconlugia = new ImageIcon("img\\iconLUGIA.GIF");
+        ImageIcon icongyarados = new ImageIcon("img\\iconGYARADOS.GIF");
+        ImageIcon icondarkrai = new ImageIcon("img\\iconDARKRAI2.GIF");
+        ImageIcon icongiratina = new ImageIcon("img\\iconGIRATINA.GIF");
+        ImageIcon iconkyogre = new ImageIcon("img\\iconKYOGRE.GIF");
+        ImageIcon icondialga = new ImageIcon("img\\iconDIALGA.GIF");
         //items
         ImageIcon iconberry = new ImageIcon("img\\new\\berry.PNG"); //ion
         ImageIcon potion = new ImageIcon("img\\new\\potion.PNG"); //imt
@@ -133,15 +132,12 @@ public class GUIstage2 extends JFrame{
         ImageIcon item8 = new ImageIcon("img\\new\\SinnohStone.PNG");
         ImageIcon item9 = new ImageIcon("img\\new\\SunStone.PNG");
         ImageIcon item10 = new ImageIcon("img\\new\\UnovaStone.PNG");
-        ImageIcon sk = new ImageIcon("test.gif");
-        ImageIcon coe = new ImageIcon("test.gif");
 
         ImageIcon stage = new ImageIcon("img\\stage.PNG");
         
                 //top
                 JPanel p1 = new JPanel();
                 p1.setLayout(new GridLayout(1,5));
-                //  p1.setBackground(Color.darkGray);
                 
                 JLabel imgPK = new JLabel("Name : " + namePokemon, iconpk, JLabel.CENTER); //Pokemons.getName()
                 imgPK.setFont(new Font("Eras Demi ITC", Font.BOLD, 13));
@@ -168,9 +164,6 @@ public class GUIstage2 extends JFrame{
                 JPanel p3 = new JPanel();
                 p3.setLayout(new GridLayout(1,2));
 
-
-                JLabel efk = new JLabel("", sk, JLabel.CENTER);
-                JLabel KF = new JLabel("", coe, JLabel.CENTER);
                 //item
                 if(Pokemons.getName().equals("Bulbasaur")){   //all +s
                     pxnv = new JLabel("", newbbs, JLabel.CENTER);
@@ -304,9 +297,9 @@ public class GUIstage2 extends JFrame{
 
          //p3
          p3.setBorder(BorderFactory.createEmptyBorder(100, 0, 0, 0));
-         pxnv.setBounds(280, 220, 200, 200);
-         pA.setBounds(780, 220, 200, 200);
-         bA.setBounds(100, 400, 120, 60);
+         pxnv.setBounds(280, 240, 200, 200);
+         pA.setBounds(760, 140, 350, 350);
+         bA.setBounds(100, 350, 120, 60);
          itA.setBounds(530, 400, 200, 100);
 
          //p4
