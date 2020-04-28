@@ -12,7 +12,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-//import java.util.EventListener;
+import java.util.EventListener;
 
 
 public class GUIChoosePokemon extends JFrame{
@@ -34,12 +34,13 @@ public class GUIChoosePokemon extends JFrame{
     
     private int checkPokemon = 0;
     
-    public GUIChoosePokemon(){
+    public GUIChoosePokemon(String namePokemon){
         super("Choose your buddy");
         JPanel c = new JPanel();
         c.setLayout(new BorderLayout());
+        
         add(c);
-        //C:\Users\Admin\Desktop\Y 2\ปี 2 เทอม 2\OOP\assignment Final Domeeeeeeeeeeeee\Pokemon\src\main\java\img
+
         ImageIcon bs = new ImageIcon("img/111.GIF");
         ImageIcon md = new ImageIcon("img/222.GIF");
         ImageIcon qt = new ImageIcon("img/333.GIF"); 
@@ -50,7 +51,6 @@ public class GUIChoosePokemon extends JFrame{
         JLabel title = new JLabel("CHOOSE YOUR BUDDY",JLabel.CENTER);
         title.setFont(new Font("karma future", Font.TRUETYPE_FONT, 38));
         title.setForeground(Color.RED);
-        //title.setBackground(Color.ORANGE);
         c.add(title, BorderLayout.NORTH);
         
    
@@ -67,6 +67,7 @@ public class GUIChoosePokemon extends JFrame{
         c1.setBorder(BorderFactory.createEmptyBorder(60, 0, 0, 60));
         //c1.setBounds(300, 400, 200, 200);
         //getContentPane().add(c1);
+    
         
         JLabel value = new JLabel("Pokemon : " + BS.getName(), JLabel.LEFT);
         value.setFont(new Font("Karma suture", Font.BOLD, 24));
@@ -79,9 +80,6 @@ public class GUIChoosePokemon extends JFrame{
         JLabel value4 = new JLabel("      ", JLabel.LEFT);
         value3.setFont(new Font("Karma suture", Font.BOLD, 24));
 
-        //JLabel inf4 = new JLabel("Weapon: "+Base.getWeapon(),JLabel.LEFT);
-        //inf4.setFont(new Font("Eras Demi ITC", Font.BOLD, 18));
-
         c1.add(value);
         c1.add(value1);
         c1.add(value2);
@@ -90,7 +88,6 @@ public class GUIChoosePokemon extends JFrame{
         
         c.add(c1,BorderLayout.EAST);
         JPanel c2 = new JPanel();
-        //c2.setBackground(Color.BLACK);
         
         c2.setLayout(new GridLayout(1,5));
         JButton buttonBBS = new JButton("Bulbasaur");
@@ -102,10 +99,8 @@ public class GUIChoosePokemon extends JFrame{
         JButton buttonPKC = new JButton("Pikachu");
         buttonPKC.setFont(new Font("Pokemon Gb", Font.BOLD, 12));
         JButton play = new JButton("",pogo);
-        play.setFont(new Font("Pokemon Gb", Font.BOLD, 14));
+        play.setFont(new Font("Pokemon Gb", Font.BOLD, 12));
         c.add(play,BorderLayout.SOUTH);
-        /*JButton bttf = new JButton("THEIF");
-        bttf.setFont(new Font("Cambria Math", Font.BOLD, 18));*/
         c2.add(buttonBBS);
         c2.add(buttonCMD);
         c2.add(buttonSQT);
@@ -184,24 +179,24 @@ public class GUIChoosePokemon extends JFrame{
             public void actionPerformed(ActionEvent epy){
                 if(checkPokemon == 0){
                     setVisible(false);
-                    new GUIstage(BS, bag);
+                    new GUIstage2(BS, bag, namePokemon);
                     
                 }
                 else if(checkPokemon ==1){
                     setVisible(false);
-                    new GUIstage(MD, bag);
+                    new GUIstage2(MD, bag, namePokemon);
                     
                 }
                 
                 else if(checkPokemon ==2){
                     setVisible(false);
-                    new GUIstage(QT, bag);
+                    new GUIstage2(QT, bag, namePokemon);
                     
                 }
                 
                 else if(checkPokemon ==3){
                     setVisible(false);
-                    new GUIstage(KC, bag);
+                    new GUIstage2(KC, bag, namePokemon);
                     
                 }
                 
@@ -212,6 +207,6 @@ public class GUIChoosePokemon extends JFrame{
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);  
-    }    
+      }    
     }  
 
