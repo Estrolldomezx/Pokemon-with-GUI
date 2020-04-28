@@ -28,7 +28,7 @@ public class GUIbag extends JFrame{
 
     private Base fb;
 
-    public GUIbag(Base base, Bag bag){
+    public GUIbag(Base base, Bag bag, String namePokemon){
         super("Bag");
         this.berry = bag.countItem("Berry"); //on
         this.potion = bag.countItem("Potion"); //mt
@@ -41,7 +41,7 @@ public class GUIbag extends JFrame{
         this.item9 = bag.countItem("Sun Stone");
         this.item10 = bag.countItem("Unova Stone");
 
-        this.php = base.getHP(); //getHP
+        this.php = base.getHP()-40; //getHP
         this.pmaxhp = base.MaxCharHP();
         this.parmor = base.getDEF();
         this.pexp = base.getEXP();
@@ -50,21 +50,21 @@ public class GUIbag extends JFrame{
         this.countMon = base.getKillmon();
         this.ppokeball = base.getPokeball();
 
-        ImageIcon imgPotion = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\potion.PNG");
-        ImageIcon imgBerry = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\berry.PNG");
-        ImageIcon imgsuperpotion = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\superpotion.PNG");
-        ImageIcon imgHP = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconHP.PNG");
-        ImageIcon imgPokeball = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconPokeballBag.PNG");
-        ImageIcon imgitem4 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\Upgrade.PNG");
-        ImageIcon imgitem5 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\DragonScale.PNG");
-        ImageIcon imgitem6 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\KingRock.PNG");
-        ImageIcon imgitem7 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\MetalCoat.PNG");
-        ImageIcon imgitem8 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\SinnohStone.PNG");
-        ImageIcon imgitem9 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\SunStone.PNG");
-        ImageIcon imgitem10 = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\UnovaStone.PNG");
-        ImageIcon imgbtfIcon = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\iconFIGHT.PNG");
-        ImageIcon imgiemt = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\imgiemt.PNG");
-        ImageIcon imgMana = new ImageIcon("C:\\Users\\Admin\\Desktop\\img\\new\\iconMANA.PNG");
+        ImageIcon imgPotion = new ImageIcon("img\\new\\potion.PNG");
+        ImageIcon imgBerry = new ImageIcon("img\\new\\berry.PNG");
+        ImageIcon imgsuperpotion = new ImageIcon("img\\new\\superpotion.PNG");
+        ImageIcon imgHP = new ImageIcon("img\\iconHP.PNG");
+        ImageIcon imgPokeball = new ImageIcon("img\\new\\iconPokeballBag.PNG");
+        ImageIcon imgitem4 = new ImageIcon("img\\new\\Upgrade.PNG");
+        ImageIcon imgitem5 = new ImageIcon("img\\new\\DragonScale.PNG");
+        ImageIcon imgitem6 = new ImageIcon("img\\new\\KingRock.PNG");
+        ImageIcon imgitem7 = new ImageIcon("img\\new\\MetalCoat.PNG");
+        ImageIcon imgitem8 = new ImageIcon("img\\new\\SinnohStone.PNG");
+        ImageIcon imgitem9 = new ImageIcon("img\\new\\SunStone.PNG");
+        ImageIcon imgitem10 = new ImageIcon("img\\new\\UnovaStone.PNG");
+        ImageIcon imgbtfIcon = new ImageIcon("img\\iconFIGHT.PNG");
+        ImageIcon imgiemt = new ImageIcon("img\\new\\imgiemt.PNG");
+        ImageIcon imgMana = new ImageIcon("img\\new\\iconMANA.PNG");
         
         JPanel p = new JPanel();
         p.setLayout(new BorderLayout());
@@ -149,36 +149,36 @@ public class GUIbag extends JFrame{
 
 
         //
-        if(berry <= 0){
-            berryButton.setEnabled(false);
-        }
-        if(potion <=0){
-            potionButton.setEnabled(false);
-        }
-        if(superpotion <=0){
-            superpotionButton.setEnabled(false);
-        }
-        if(item4 <=0){
-            item4Button.setEnabled(false);
-        }
-        if(item5 <=0){
-            item5Button.setEnabled(false);
-        }
-        if(item6 <=0){
-            item6Button.setEnabled(false);
-        }
-        if(item7 <=0){
-            item7Button.setEnabled(false);
-        }
-        if(item8 <=0){
-            item8Button.setEnabled(false);
-        }
-        if(item9 <=0){
-            item9Button.setEnabled(false);
-        }
-        if(item10 <=0){
-            item10Button.setEnabled(false);
-        }
+            if(berry <= 0){
+                berryButton.setEnabled(false);
+            }
+            if(potion <=0){
+                potionButton.setEnabled(false);
+            }
+            if(superpotion <=0){
+                superpotionButton.setEnabled(false);
+            }
+            if(item4 <=0){
+                item4Button.setEnabled(false);
+            }
+            if(item5 <=0){
+                item5Button.setEnabled(false);
+            }
+            if(item6 <=0){
+                item6Button.setEnabled(false);
+            }
+            if(item7 <=0){
+                item7Button.setEnabled(false);
+            }
+            if(item8 <=0){
+                item8Button.setEnabled(false);
+            }
+            if(item9 <=0){
+                item9Button.setEnabled(false);
+            }
+            if(item10 <=0){
+                item10Button.setEnabled(false);
+            }
 
         p2.add(sell);
         p2.add(item6Button);
@@ -429,7 +429,7 @@ public class GUIbag extends JFrame{
             public void actionPerformed(ActionEvent eata){
                 setVisible(false);
                 fb = new Base(base.getName(), base.getBaseSkill(), base.getDamage(), php, pexp, ppokeball, pmana, parmor,plevel,countMon);
-                new GUIstage2(fb,bag);
+                new GUIstage2(fb , bag, namePokemon);
 
            
             }
