@@ -165,6 +165,7 @@ public class GUIstatus extends JFrame{
 
 
         backButton.addActionListener(new ActionListener(){
+            @Override
             public void actionPerformed(ActionEvent back){
                 if(Pokemons.getName().equals("Bulbasaur")){
                     setVisible(false);
@@ -227,6 +228,7 @@ public class GUIstatus extends JFrame{
         });
 
         upgradeButton.addActionListener(new ActionListener(){
+            @Override
             public void actionPerformed(ActionEvent evo){
 
             //2
