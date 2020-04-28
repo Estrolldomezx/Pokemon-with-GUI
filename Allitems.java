@@ -8,7 +8,7 @@
  *
  * @author Admin
  */
-public class AllPokemons {
+public class Allitems {
     private Mons1 p1;
     private Mons1 p11;
     private Mons1 p111;
@@ -21,8 +21,7 @@ public class AllPokemons {
     private Mons1 p4;
     private Mons1 p44;
 
-  
-    public AllPokemons(){
+    public Allitems() {
         this.p1 = new Mons1("Bulbasaur","Solar beam",100);
         this.p11 = new Mons1("Bulbasaur2","Solar beam",100);
         this.p111 = new Mons1("Bulbasaur3","Solar beam",100);
